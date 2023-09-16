@@ -42,7 +42,13 @@ public class AuthController : ControllerBase
         _dbContext.Users.Add(newUser);
         _dbContext.SaveChanges();
 
-        return Created("", newUser);
+        var response = new RegisterResponse
+        {
+            Username = newUser.Username,
+            Email = newUser.Email
+        };
+
+        return Created("", response);
     }
 
     [HttpPost("login")]
@@ -64,9 +70,18 @@ public class AuthController : ControllerBase
             _configuration["JwtSettings:Issuer"],
             _configuration["JwtSettings:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(30),
+            expires: DateTime.Now.AddMinutes(1440),
             signingCredentials: credentials);
 
-        return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+        var response = new LoginResponse
+        {
+            Username = user.Username,
+            Token = tokenString,
+            ExpiresAt = DateTime.Now.AddMinutes(1440)
+        };
+
+        return Ok(response);
     }
 }
