@@ -78,6 +78,21 @@ namespace Twitter_Clone.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Twitter_Clone.Models.UserFollow", b =>
+                {
+                    b.Property<int>("FollowerId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("FollowingId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("FollowerId", "FollowingId");
+
+                    b.HasIndex("FollowingId");
+
+                    b.ToTable("UserFollows");
+                });
+
             modelBuilder.Entity("Twitter_Clone.Models.Tweet", b =>
                 {
                     b.HasOne("Twitter_Clone.Models.User", "User")
@@ -89,8 +104,31 @@ namespace Twitter_Clone.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Twitter_Clone.Models.UserFollow", b =>
+                {
+                    b.HasOne("Twitter_Clone.Models.User", "Follower")
+                        .WithMany("Following")
+                        .HasForeignKey("FollowerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Twitter_Clone.Models.User", "Following")
+                        .WithMany("Followers")
+                        .HasForeignKey("FollowingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Follower");
+
+                    b.Navigation("Following");
+                });
+
             modelBuilder.Entity("Twitter_Clone.Models.User", b =>
                 {
+                    b.Navigation("Followers");
+
+                    b.Navigation("Following");
+
                     b.Navigation("Tweets");
                 });
 #pragma warning restore 612, 618

@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Twitter_Clone.Data;
 using Twitter_Clone.Models;
@@ -36,7 +37,9 @@ public class AuthController : ControllerBase
         {
             Username = userRegister.Username,
             Email = userRegister.Email,
-            PasswordHash = hashedPassword
+            PasswordHash = hashedPassword,
+            CreatedAt = DateTime.UtcNow,
+            LastLogin = DateTime.UtcNow
         };
 
         _dbContext.Users.Add(newUser);
@@ -52,10 +55,15 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginDto userLogin)
+    public async Task<IActionResult> Login(LoginDto userLogin)
     {
-        var user = _dbContext.Users.FirstOrDefault(u => u.Username == userLogin.Username);
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == userLogin.Username);
         if (user == null || !PasswordHasher.VerifyPassword(userLogin.Password, user.PasswordHash)) return BadRequest("Invalid username or password");
+
+        // Update LastLogin
+        user.LastLogin = DateTime.UtcNow;
+        _dbContext.Users.Update(user);
+        await _dbContext.SaveChangesAsync();
 
         var claims = new[]
         {
@@ -71,7 +79,8 @@ public class AuthController : ControllerBase
             _configuration["JwtSettings:Audience"],
             claims,
             expires: DateTime.Now.AddMinutes(1440),
-            signingCredentials: credentials);
+            signingCredentials: credentials
+        );
 
         var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
@@ -84,4 +93,5 @@ public class AuthController : ControllerBase
 
         return Ok(response);
     }
+
 }

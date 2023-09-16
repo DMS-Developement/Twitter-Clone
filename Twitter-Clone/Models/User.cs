@@ -9,4 +9,6 @@ public class User
     public DateTime CreatedAt { get; set; }
     public DateTime LastLogin { get; set; }
     public ICollection<Tweet>? Tweets { get; set; }
+    public ICollection<UserFollow>? Followers { get; set; }
+    public ICollection<UserFollow>? Following { get; set; }
 }
