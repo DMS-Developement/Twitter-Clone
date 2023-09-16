@@ -2,38 +2,66 @@ using Microsoft.EntityFrameworkCore;
 using Twitter_Clone.Data;
 using Twitter_Clone.Interfaces;
 using Twitter_Clone.Models;
+using Twitter_Clone.Models.RegularDTOs;
+using Twitter_Clone.Services;
 
 namespace Twitter_Clone.Repositories;
 
 public class TweetRepository : ITweetRepository
 {
     private readonly TwitterCloneDb _context;
+    private readonly UserMapper _userMapper;
+    private readonly TweetMapper _tweetMapper;
 
-    public TweetRepository(TwitterCloneDb context)
+    public TweetRepository(TwitterCloneDb context, UserMapper userMapper, TweetMapper tweetMapper)
     {
         _context = context;
+        _userMapper = userMapper;
+        _tweetMapper = tweetMapper;
     }
 
-    public async Task<Tweet> CreateTweet(Tweet tweet)
+    public async Task<TweetDto> CreateTweet(Tweet tweet)
     {
-        _context.Add(tweet);
+        var user = await _context.Users.FindAsync(tweet.UserId);
+        if (user == null) throw new Exception("User does not exist");
+
+        tweet.User = user;
+
+        _context.Tweets.Add(tweet);
         await _context.SaveChangesAsync();
-        return tweet;
+
+        return _tweetMapper.MapTweetToTweetDto(tweet);
     }
 
-    public async Task<Tweet> GetTweetById(int id)
+    public async Task<TweetDto> GetTweetById(int id)
     {
-        return await _context.Tweets.FindAsync(id);
+        var tweet = await _context.Tweets.FindAsync(id);
+
+        if (tweet == null) return null;
+
+        return _tweetMapper.MapTweetToTweetDto(tweet);
     }
 
-    public async Task<IEnumerable<Tweet>> GetAllTweets()
+    public async Task<List<TweetDto>> GetAllTweets()
     {
-        return await _context.Tweets.ToListAsync();
+        var tweets = await _context.Tweets.ToListAsync();
+
+        List<TweetDto> tweetDtos = new();
+
+        foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
+
+        return tweetDtos;
     }
 
-    public async Task<IEnumerable<Tweet>> GetTweetsByUserId(int userId)
+    public async Task<List<TweetDto>> GetTweetsByUserId(int userId)
     {
-        return await _context.Tweets.Where(t => t.UserId == userId).ToListAsync();
+        var tweets = await _context.Tweets.Where(t => t.UserId == userId).ToListAsync();
+
+        List<TweetDto> tweetDtos = new();
+
+        foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
+
+        return tweetDtos;
     }
 
     public async Task DeleteTweet(int id)

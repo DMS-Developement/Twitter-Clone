@@ -2,21 +2,40 @@ using Microsoft.EntityFrameworkCore;
 using Twitter_Clone.Data;
 using Twitter_Clone.Interfaces;
 using Twitter_Clone.Models;
+using Twitter_Clone.Models.RegularDTOs;
+using Twitter_Clone.Services;
 
 namespace Twitter_Clone.Repositories;
 
 public class UserRepository : IUserRepository
 {
     private readonly TwitterCloneDb _context;
+    private readonly UserMapper _userMapper;
 
-    public UserRepository(TwitterCloneDb context)
+    public UserRepository(TwitterCloneDb context, UserMapper userMapper)
     {
         _context = context;
+        _userMapper = userMapper;
     }
 
-    public async Task<User> GetUserProfile(int id)
+    public async Task<List<UserDto>> GetAllUsers()
     {
-        return await _context.Users.FindAsync(id);
+        var users = await _context.Users.ToListAsync();
+        List<UserDto> userDtos = new();
+
+        foreach (var user in users) userDtos.Add(_userMapper.MapUserToDto(user));
+
+        return userDtos;
+    }
+
+    public async Task<UserDto> GetUserProfile(int id)
+    {
+        var user = await _context.Users.FindAsync(id);
+
+        if (user == null) return null;
+
+        var userDto = _userMapper.MapUserToDto(user);
+        return userDto;
     }
 
     public async Task FollowUser(int userId, int targetUserId)

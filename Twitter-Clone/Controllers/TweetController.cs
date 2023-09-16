@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Twitter_Clone.Interfaces;
 using Twitter_Clone.Models;
 
 namespace Twitter_Clone.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class TweetController : ControllerBase
@@ -38,9 +40,10 @@ public class TweetController : ControllerBase
     }
 
     [HttpGet("user/{userId}/tweets")]
-    public async Task<IEnumerable<Tweet>> GetTweetsByUserId(int userId)
+    public async Task<IActionResult> GetTweetsByUserId(int userId)
     {
-        return await _tweetRepository.GetTweetsByUserId(userId);
+        var tweets = await _tweetRepository.GetTweetsByUserId(userId);
+        return Ok(tweets);
     }
 
     [HttpDelete("{id}")]

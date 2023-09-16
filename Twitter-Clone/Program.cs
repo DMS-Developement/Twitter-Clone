@@ -3,11 +3,19 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Twitter_Clone.Data;
+using Twitter_Clone.Interfaces;
+using Twitter_Clone.Repositories;
+using Twitter_Clone.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers(); // Changed from AddControllersWithViews()
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITweetRepository, TweetRepository>();
+builder.Services.AddScoped<UserMapper>();
+builder.Services.AddScoped<TweetMapper>();
 
 var jwtSettingsSection = builder.Configuration.GetSection("JwtSettings");
 var jwtSettings = jwtSettingsSection.Get<Dictionary<string, string>>();

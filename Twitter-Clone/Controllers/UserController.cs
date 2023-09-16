@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Twitter_Clone.Interfaces;
 
 namespace Twitter_Clone.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
@@ -12,6 +14,13 @@ public class UserController : ControllerBase
     public UserController(IUserRepository userRepository)
     {
         _userRepository = userRepository;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllUsers()
+    {
+        var users = await _userRepository.GetAllUsers();
+        return Ok(users);
     }
 
     [HttpGet("{id}")]
