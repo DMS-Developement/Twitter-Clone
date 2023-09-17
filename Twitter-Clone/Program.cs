@@ -2,14 +2,25 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using Serilog.Events;
 using Twitter_Clone.Data;
+using Twitter_Clone.Errors;
 using Twitter_Clone.Interfaces;
 using Twitter_Clone.Repositories;
 using Twitter_Clone.Services;
 
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Host.UseSerilog();
 builder.Services.AddControllers(); // Changed from AddControllersWithViews()
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -51,10 +62,12 @@ if (app.Environment.IsDevelopment())
 // app.UseAuthentication();
 // app.UseAuthorization();
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 // For APIs, you can use attribute-based routing in controllers
 app.MapControllers(); // Added MapControllers

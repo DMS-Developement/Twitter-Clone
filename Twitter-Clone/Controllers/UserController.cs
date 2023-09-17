@@ -10,38 +10,72 @@ namespace Twitter_Clone.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserRepository _userRepository;
+    private readonly ILogger<UserController> _logger;
 
-    public UserController(IUserRepository userRepository)
+    public UserController(IUserRepository userRepository, ILogger<UserController> logger)
     {
         _userRepository = userRepository;
+        _logger = logger;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAllUsers()
     {
-        var users = await _userRepository.GetAllUsers();
-        return Ok(users);
+        try
+        {
+            var users = await _userRepository.GetAllUsers();
+            return Ok(users);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Something went wrong: {e}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Something went wrong" });
+        }
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetUserProfile(int id)
     {
-        var user = await _userRepository.GetUserProfile(id);
-        if (user == null) return NotFound("User not found!");
-        return Ok(user);
+        try
+        {
+            var user = await _userRepository.GetUserProfile(id);
+            if (user == null) return NotFound("User not found!");
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Something went wrong: {e}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Something went wrong" });
+        }
     }
 
     [HttpPost("{userId}/follow")]
     public async Task<IActionResult> FollowUser(int userId, [FromBody] int targetUserId)
     {
-        await _userRepository.FollowUser(userId, targetUserId);
-        return Ok(new { message = "User followed successfully!" });
+        try
+        {
+            await _userRepository.FollowUser(userId, targetUserId);
+            return Ok(new { message = "User followed successfully!" });
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Something went wrong: {e}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Something went wrong" });
+        }
     }
 
     [HttpPost("{userId}/unfollow")]
     public async Task<IActionResult> UnfollowUser(int userId, [FromBody] int targetUserId)
     {
-        await _userRepository.UnfollowUser(userId, targetUserId);
-        return Ok(new { message = "User unfollowed successfully!" });
+        try
+        {
+            await _userRepository.UnfollowUser(userId, targetUserId);
+            return Ok(new { message = "User unfollowed successfully!" });
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Something went wrong: {e}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Something went wrong" });
+        }
     }
 }

@@ -10,67 +10,127 @@ namespace Twitter_Clone.Repositories;
 public class TweetRepository : ITweetRepository
 {
     private readonly TwitterCloneDb _context;
-    private readonly UserMapper _userMapper;
     private readonly TweetMapper _tweetMapper;
+    private readonly ILogger<TweetRepository> _logger;
 
-    public TweetRepository(TwitterCloneDb context, UserMapper userMapper, TweetMapper tweetMapper)
+    public TweetRepository(TwitterCloneDb context, TweetMapper tweetMapper, ILogger<TweetRepository> logger)
     {
         _context = context;
-        _userMapper = userMapper;
         _tweetMapper = tweetMapper;
+        _logger = logger;
     }
 
     public async Task<TweetDto> CreateTweet(Tweet tweet)
     {
-        var user = await _context.Users.FindAsync(tweet.UserId);
-        if (user == null) throw new Exception("User does not exist");
+        try
+        {
+            var user = await _context.Users.FindAsync(tweet.UserId);
+            if (user == null)
+            {
+                _logger.LogError($"User with ID {tweet.UserId} does not exist");
+                throw new ArgumentException("User does not exist");
+            }
 
-        tweet.User = user;
+            tweet.User = user;
+            _context.Tweets.Add(tweet);
+            await _context.SaveChangesAsync();
 
-        _context.Tweets.Add(tweet);
-        await _context.SaveChangesAsync();
-
-        return _tweetMapper.MapTweetToTweetDto(tweet);
+            return _tweetMapper.MapTweetToTweetDto(tweet);
+        }
+        catch (DbUpdateException e)
+        {
+            _logger.LogError($"Database Update Error: {e.Message}");
+            throw;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Generic Error: {e.Message}");
+            throw;
+        }
     }
 
     public async Task<TweetDto> GetTweetById(int id)
     {
-        var tweet = await _context.Tweets.Include(t => t.User).FirstOrDefaultAsync(t => t.Id == id);
+        try
+        {
+            var tweet = await _context.Tweets.Include(t => t.User).FirstOrDefaultAsync(t => t.Id == id);
+            if (tweet == null)
+            {
+                _logger.LogWarning($"Tweet with ID {id} does not exist");
+                return null;
+            }
 
-        if (tweet == null) return null;
-
-        return _tweetMapper.MapTweetToTweetDto(tweet);
+            return _tweetMapper.MapTweetToTweetDto(tweet);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Generic Error: {e.Message}");
+            throw;
+        }
     }
+
 
     public async Task<List<TweetDto>> GetAllTweets()
     {
-        var tweets = await _context.Tweets.Include(t => t.User).ToListAsync();
+        try
+        {
+            var tweets = await _context.Tweets.Include(t => t.User).ToListAsync();
 
-        List<TweetDto> tweetDtos = new();
+            List<TweetDto> tweetDtos = new();
 
-        foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
+            foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
 
-        return tweetDtos;
+            return tweetDtos;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Generic Error: {e.Message}");
+            throw;
+        }
     }
 
     public async Task<List<TweetDto>> GetTweetsByUserId(int userId)
     {
-        var tweets = await _context.Tweets.Where(t => t.UserId == userId).Include(t => t.User).ToListAsync();
+        try
+        {
+            var tweets = await _context.Tweets.Where(t => t.UserId == userId).Include(t => t.User).ToListAsync();
 
-        List<TweetDto> tweetDtos = new();
+            List<TweetDto> tweetDtos = new();
 
-        foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
+            foreach (var tweet in tweets) tweetDtos.Add(_tweetMapper.MapTweetToTweetDto(tweet));
 
-        return tweetDtos;
+            return tweetDtos;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Generic Error: {e.Message}");
+            throw;
+        }
     }
 
     public async Task DeleteTweet(int id)
     {
-        var tweet = await _context.Tweets.FindAsync(id);
-        if (tweet != null)
+        try
         {
+            var tweet = await _context.Tweets.FindAsync(id);
+            if (tweet == null)
+            {
+                _logger.LogWarning($"Tweet with ID {id} does not exist");
+                throw new ArgumentException("Tweet does not exist");
+            }
+
             _context.Tweets.Remove(tweet);
             await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException e)
+        {
+            _logger.LogError($"Database Update Error: {e.Message}");
+            throw;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Generic Error: {e.Message}");
+            throw;
         }
     }
 }
