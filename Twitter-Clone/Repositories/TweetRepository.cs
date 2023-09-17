@@ -35,7 +35,7 @@ public class TweetRepository : ITweetRepository
 
     public async Task<TweetDto> GetTweetById(int id)
     {
-        var tweet = await _context.Tweets.FindAsync(id);
+        var tweet = await _context.Tweets.Include(t => t.User).FirstOrDefaultAsync(t => t.Id == id);
 
         if (tweet == null) return null;
 
@@ -44,7 +44,7 @@ public class TweetRepository : ITweetRepository
 
     public async Task<List<TweetDto>> GetAllTweets()
     {
-        var tweets = await _context.Tweets.ToListAsync();
+        var tweets = await _context.Tweets.Include(t => t.User).ToListAsync();
 
         List<TweetDto> tweetDtos = new();
 
@@ -55,7 +55,7 @@ public class TweetRepository : ITweetRepository
 
     public async Task<List<TweetDto>> GetTweetsByUserId(int userId)
     {
-        var tweets = await _context.Tweets.Where(t => t.UserId == userId).ToListAsync();
+        var tweets = await _context.Tweets.Where(t => t.UserId == userId).Include(t => t.User).ToListAsync();
 
         List<TweetDto> tweetDtos = new();
 
