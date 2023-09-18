@@ -7,9 +7,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {AppComponent} from './app.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
-import {HomeComponent} from './home/home.component';
-import {CounterComponent} from './counter/counter.component';
-import {FetchDataComponent} from './fetch-data/fetch-data.component';
 import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {WelcomeComponent} from './welcome/welcome.component';
@@ -18,9 +15,6 @@ import {WelcomeComponent} from './welcome/welcome.component';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     LoginComponent,
     RegisterComponent,
     WelcomeComponent
@@ -33,8 +27,6 @@ import {WelcomeComponent} from './welcome/welcome.component';
     FormsModule,
     RouterModule.forRoot([
       {path: '', component: WelcomeComponent, pathMatch: 'full'},
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
   providers: [],
