@@ -1,0 +1,24 @@
+<div (click)="closeLoginForm()" *ngIf="showLoginForm" @fadeIn class="overlay">
+	<div (click)="$event.stopPropagation()" class="login">
+		<form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="form">
+			<div class="input-element">
+				<label for="username">Username: </label>
+				<input formControlName="username" id="username" placeholder="Username" required type="text">
+				<div *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.touched" class="warning">
+					<p *ngIf="loginForm.get('username')?.hasError('required')">Username is required!</p>
+				</div>
+			</div>
+
+			<div class="input-element">
+				<label for="password">Password: </label>
+				<input formControlName="password" id="password" placeholder="Password" required type="password">
+				<div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="warning">
+					<p *ngIf="loginForm.get('password')?.hasError('required')">Password is required!</p>
+					<p *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long!</p>
+				</div>
+			</div>
+
+			<button [disabled]="loginForm.invalid" type="submit">Login</button>
+		</form>
+	</div>
+</div>

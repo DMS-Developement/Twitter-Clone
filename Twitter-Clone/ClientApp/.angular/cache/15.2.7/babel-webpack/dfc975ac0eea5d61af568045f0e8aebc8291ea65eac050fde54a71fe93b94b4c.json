@@ -1,0 +1,30 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nlet WelcomeComponent = class WelcomeComponent {\n  constructor() {\n    this.showLoginForm = false;\n    this.showRegisterForm = false;\n  }\n};\nWelcomeComponent = __decorate([Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})], WelcomeComponent);\nexport { WelcomeComponent };\n-register - modal - flag;\n{}\nngOnInit();\n{}",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAOxC,IAAMC,gBAAgB,GAAtB,MAAMA,gBAAgB;EAAtBC;IAEL,kBAAa,GAAY,KAAK;IAC5B,qBAAgB,GAAY,KAAK;EAER;CAAA;AALhBD,gBAAgB,eAL5BD,SAAS,CAAC;EACTG,QAAQ,EAAE,aAAa;EACvBC,WAAW,EAAE,0BAA0B;EACvCC,SAAS,EAAE,CAAC,yBAAyB;CACtC,CAAC,GACWJ,gBAAgB,CAKA;SALhBA,gBAAgB;AAKA,CAACK,QAAQ,GAACC,KAAK,GAACC,IAAI;AAAE;AACjDC,QAAQ,EAAE;AAAC",
+    "names": [
+      "Component",
+      "WelcomeComponent",
+      "constructor",
+      "selector",
+      "templateUrl",
+      "styleUrls",
+      "register",
+      "modal",
+      "flag",
+      "ngOnInit"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})\nexport class WelcomeComponent implements OnInit{\n  \n  showLoginForm: boolean = false;\n    showRegisterForm: boolean = false;\n\n    constructor(private login-register-modal-flag) { }\n  ngOnInit() {\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -50,6 +50,17 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings!["Key"]))
     };
 });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyPolicy", policyBuilder =>
+    {
+        policyBuilder.WithOrigins("https://localhost:44438")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -62,6 +73,7 @@ if (app.Environment.IsDevelopment())
 // app.UseAuthentication();
 // app.UseAuthorization();
 
+app.UseCors("MyPolicy");
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseRouting();

@@ -1,0 +1,48 @@
+{
+  "ast": null,
+  "code": "import { animate, state, style, transition, trigger } from \"@angular/animations\";\nimport { Validators } from \"@angular/forms\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/forms\";\nimport * as i2 from \"../../login-register-modal-flag.service\";\nexport class LoginComponent {\n  constructor(formBuilder, loginFlag) {\n    this.formBuilder = formBuilder;\n    this.loginFlag = loginFlag;\n    this.showLoginForm = false;\n  }\n  ngOnInit() {\n    this.loginForm = this.formBuilder.group({\n      'username': ['', Validators.required],\n      'password': ['', [Validators.required, Validators.minLength(6)]]\n    });\n    this.loginFlag.currentRegisterFlag.subscribe(flag => this.showLoginForm = flag);\n  }\n}\nLoginComponent.ɵfac = function LoginComponent_Factory(t) {\n  return new (t || LoginComponent)(i0.ɵɵdirectiveInject(i1.FormBuilder), i0.ɵɵdirectiveInject(i2.LoginRegisterModalFlagService));\n};\nLoginComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({\n  type: LoginComponent,\n  selectors: [[\"app-login\"]],\n  decls: 1,\n  vars: 0,\n  consts: [[1, \"login\"]],\n  template: function LoginComponent_Template(rf, ctx) {\n    if (rf & 1) {\n      i0.ɵɵelement(0, \"div\", 0);\n    }\n  },\n  styles: [\"\\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */\"],\n  data: {\n    animation: [trigger('fadeIn', [state('void', style({\n      opacity: 0\n    })), transition('void <=> *', animate(100))])]\n  }\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAAQA,OAAO,EAAEC,KAAK,EAAEC,KAAK,EAAEC,UAAU,EAAEC,OAAO,QAAO,qBAAqB;AAC9E,SAAgCC,UAAU,QAAO,gBAAgB;;;;AAgBjE,OAAM,MAAOC,cAAc;EAKzBC,YAAoBC,WAAwB,EAAUC,SAAwC;IAA1E,gBAAW,GAAXD,WAAW;IAAuB,cAAS,GAATC,SAAS;IAD/D,kBAAa,GAAY,KAAK;EACmE;EAE/FC,QAAQ;IACN,IAAI,CAACC,SAAS,GAAG,IAAI,CAACH,WAAW,CAACI,KAAK,CAAC;MACtC,UAAU,EAAE,CAAC,EAAE,EAAEP,UAAU,CAACQ,QAAQ,CAAC;MACrC,UAAU,EAAE,CAAC,EAAE,EAAE,CAACR,UAAU,CAACQ,QAAQ,EAAER,UAAU,CAACS,SAAS,CAAC,CAAC,CAAC,CAAC;KAChE,CAAC;IAEF,IAAI,CAACL,SAAS,CAACM,mBAAmB,CAACC,SAAS,CAACC,IAAI,IAAI,IAAI,CAACC,aAAa,GAAGD,IAAI,CAAC;EACjF;;AAdSX,cAAc;mBAAdA,cAAc;AAAA;AAAdA,cAAc;QAAdA,cAAc;EAAAa;EAAAC;EAAAC;EAAAC;EAAAC;IAAA;MClB3BC,yBAEM;;;;;eDOQ,CACVpB,OAAO,CAAC,QAAQ,EAAE,CAChBH,KAAK,CAAC,MAAM,EAAEC,KAAK,CAAC;MAClBuB,OAAO,EAAE;KACV,CAAC,CAAC,EACHtB,UAAU,CAAC,YAAY,EAAEH,OAAO,CAAC,GAAG,CAAC,CAAC,CACvC,CAAC;EACH;AAAA",
+    "names": [
+      "animate",
+      "state",
+      "style",
+      "transition",
+      "trigger",
+      "Validators",
+      "LoginComponent",
+      "constructor",
+      "formBuilder",
+      "loginFlag",
+      "ngOnInit",
+      "loginForm",
+      "group",
+      "required",
+      "minLength",
+      "currentRegisterFlag",
+      "subscribe",
+      "flag",
+      "showLoginForm",
+      "selectors",
+      "decls",
+      "vars",
+      "consts",
+      "template",
+      "i0",
+      "opacity"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/auth/login/login.component.ts",
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/auth/login/login.component.html"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {animate, state, style, transition, trigger} from \"@angular/animations\";\nimport {FormBuilder, FormGroup, Validators} from \"@angular/forms\";\nimport {LoginRegisterModalFlagService} from \"../../login-register-modal-flag.service\";\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.css'],\n  animations: [\n    trigger('fadeIn', [\n      state('void', style({\n        opacity: 0\n      })),\n      transition('void <=> *', animate(100)),\n    ])\n  ]\n})\nexport class LoginComponent implements OnInit {\n\n  loginForm!: FormGroup;\n\n  showLoginForm: boolean = false\n  constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService) {}\n\n    ngOnInit() {\n      this.loginForm = this.formBuilder.group({\n        'username': ['', Validators.required],\n        'password': ['', [Validators.required, Validators.minLength(6)]]\n      });\n\n      this.loginFlag.currentRegisterFlag.subscribe(flag => this.showLoginForm = flag);\n    }\n}\n",
+      "<div class=\"login\">\n\n</div>\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

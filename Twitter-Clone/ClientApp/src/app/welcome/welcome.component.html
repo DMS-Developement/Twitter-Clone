@@ -1,0 +1,19 @@
+<div class="welcome">
+	<div class="welcome-container">
+		<div class="header">
+			<h1>Not X</h1>
+		</div>
+		<div class="buttons-and-forms">
+			<button (click)="showHideLoginForm()" class="login">Login</button>
+			<button (click)="showHideRegisterForm()" class="register">Register</button>
+
+			<div *ngIf="showLoginForm">
+				<app-login></app-login>
+			</div>
+
+			<div *ngIf="showRegisterForm">
+				<app-register></app-register>
+			</div>
+		</div>
+	</div>
+</div>

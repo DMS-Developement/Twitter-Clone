@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "import { BehaviorSubject } from 'rxjs';\nimport * as i0 from \"@angular/core\";\nexport class LoginRegisterModalFlagService {\n  constructor() {\n    this.showLoginForm = new BehaviorSubject(false);\n    this.currentLoginFlag = this.showLoginForm.asObservable();\n    this.showRegisterForm = new BehaviorSubject(false);\n    this.currentRegisterFlag = this.showRegisterForm.asObservable();\n  }\n  changeLoginFlag(flag) {\n    this.showLoginForm.next(flag);\n  }\n  changeRegisterFlag(flag) {\n    this.showRegisterForm.next(flag);\n  }\n}\nLoginRegisterModalFlagService.ɵfac = function LoginRegisterModalFlagService_Factory(t) {\n  return new (t || LoginRegisterModalFlagService)();\n};\nLoginRegisterModalFlagService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: LoginRegisterModalFlagService,\n  factory: LoginRegisterModalFlagService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAASA,eAAe,QAAQ,MAAM;;AAKtC,OAAM,MAAOC,6BAA6B;EAQxCC;IANQ,kBAAa,GAAG,IAAIF,eAAe,CAAU,KAAK,CAAC;IAC3D,qBAAgB,GAAG,IAAI,CAACG,aAAa,CAACC,YAAY,EAAE;IAE1C,qBAAgB,GAAG,IAAIJ,eAAe,CAAU,KAAK,CAAC;IAC9D,wBAAmB,GAAG,IAAI,CAACK,gBAAgB,CAACD,YAAY,EAAE;EAE5C;EAEdE,eAAe,CAACC,IAAa;IACzB,IAAI,CAACJ,aAAa,CAACK,IAAI,CAACD,IAAI,CAAC;EACjC;EAEAE,kBAAkB,CAACF,IAAa;IAC5B,IAAI,CAACF,gBAAgB,CAACG,IAAI,CAACD,IAAI,CAAC;EACpC;;AAhBSN,6BAA6B;mBAA7BA,6BAA6B;AAAA;AAA7BA,6BAA6B;SAA7BA,6BAA6B;EAAAS,SAA7BT,6BAA6B;EAAAU,YAF5B;AAAM",
+    "names": [
+      "BehaviorSubject",
+      "LoginRegisterModalFlagService",
+      "constructor",
+      "showLoginForm",
+      "asObservable",
+      "showRegisterForm",
+      "changeLoginFlag",
+      "flag",
+      "next",
+      "changeRegisterFlag",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/login-register-modal-flag.service.ts"
+    ],
+    "sourcesContent": [
+      "import { Injectable } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class LoginRegisterModalFlagService {\n\n  private showLoginForm = new BehaviorSubject<boolean>(false);\n  currentLoginFlag = this.showLoginForm.asObservable()\n\n    private showRegisterForm = new BehaviorSubject<boolean>(false);\n    currentRegisterFlag = this.showRegisterForm.asObservable()\n\n  constructor() { }\n\n    changeLoginFlag(flag: boolean) {\n        this.showLoginForm.next(flag)\n    }\n\n    changeRegisterFlag(flag: boolean) {\n        this.showRegisterForm.next(flag)\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -1,0 +1,40 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nimport { Validators } from \"@angular/forms\";\nlet RegisterComponent = class RegisterComponent {\n  constructor(formBuilder) {\n    this.formBuilder = formBuilder;\n    this.showLoginForm = false;\n    this.showRegisterForm = false;\n  }\n  ngOnInit() {\n    this.registerForm = this.formBuilder.group({\n      'email': ['', [Validators.required, Validators.email]],\n      'username': ['', Validators.required],\n      'password': ['', [Validators.required, Validators.minLength(6)]]\n    });\n  }\n  onSubmit() {\n    if (this.registerForm.valid) {\n      const email = this.registerForm.get('email')?.value;\n      const username = this.registerForm.get('username')?.value;\n      const password = this.registerForm.get('password')?.value;\n    }\n  }\n};\nRegisterComponent = __decorate([Component({\n  selector: 'app-register',\n  templateUrl: './register.component.html',\n  styleUrls: ['./register.component.css']\n})], RegisterComponent);\nexport { RegisterComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAC/C,SAAgCC,UAAU,QAAO,gBAAgB;AAO1D,IAAMC,iBAAiB,GAAvB,MAAMA,iBAAiB;EAG1BC,YAAoBC,WAAwB;IAAxB,gBAAW,GAAXA,WAAW;IAG/B,kBAAa,GAAY,KAAK;IAC9B,qBAAgB,GAAY,KAAK;EAHjC;EAKAC,QAAQ;IACJ,IAAI,CAACC,YAAY,GAAG,IAAI,CAACF,WAAW,CAACG,KAAK,CAAC;MACvC,OAAO,EAAE,CAAC,EAAE,EAAE,CAACN,UAAU,CAACO,QAAQ,EAAEP,UAAU,CAACQ,KAAK,CAAC,CAAC;MACtD,UAAU,EAAE,CAAC,EAAE,EAAER,UAAU,CAACO,QAAQ,CAAC;MACrC,UAAU,EAAE,CAAC,EAAE,EAAE,CAACP,UAAU,CAACO,QAAQ,EAAEP,UAAU,CAACS,SAAS,CAAC,CAAC,CAAC,CAAC;KAClE,CAAC;EACN;EAEAC,QAAQ;IACJ,IAAI,IAAI,CAACL,YAAY,CAACM,KAAK,EAAE;MACzB,MAAMH,KAAK,GAAG,IAAI,CAACH,YAAY,CAACO,GAAG,CAAC,OAAO,CAAC,EAAEC,KAAK;MACnD,MAAMC,QAAQ,GAAG,IAAI,CAACT,YAAY,CAACO,GAAG,CAAC,UAAU,CAAC,EAAEC,KAAK;MACzD,MAAME,QAAQ,GAAG,IAAI,CAACV,YAAY,CAACO,GAAG,CAAC,UAAU,CAAC,EAAEC,KAAK;;EAEjE;CACH;AAxBYZ,iBAAiB,eAL7BF,SAAS,CAAC;EACPiB,QAAQ,EAAE,cAAc;EACxBC,WAAW,EAAE,2BAA2B;EACxCC,SAAS,EAAE,CAAC,0BAA0B;CACzC,CAAC,GACWjB,iBAAiB,CAwB7B;SAxBYA,iBAAiB",
+    "names": [
+      "Component",
+      "Validators",
+      "RegisterComponent",
+      "constructor",
+      "formBuilder",
+      "ngOnInit",
+      "registerForm",
+      "group",
+      "required",
+      "email",
+      "minLength",
+      "onSubmit",
+      "valid",
+      "get",
+      "value",
+      "username",
+      "password",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/auth/register/register.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {FormBuilder, FormGroup, Validators} from \"@angular/forms\";\n\n@Component({\n    selector: 'app-register',\n    templateUrl: './register.component.html',\n    styleUrls: ['./register.component.css']\n})\nexport class RegisterComponent implements OnInit {\n    registerForm!: FormGroup;\n\n    constructor(private formBuilder: FormBuilder) {\n    }\n\n    showLoginForm: boolean = false;\n    showRegisterForm: boolean = false;\n\n    ngOnInit() {\n        this.registerForm = this.formBuilder.group({\n            'email': ['', [Validators.required, Validators.email]],\n            'username': ['', Validators.required],\n            'password': ['', [Validators.required, Validators.minLength(6)]]\n        })\n    }\n\n    onSubmit() {\n        if (this.registerForm.valid) {\n            const email = this.registerForm.get('email')?.value;\n            const username = this.registerForm.get('username')?.value;\n            const password = this.registerForm.get('password')?.value;\n        }\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

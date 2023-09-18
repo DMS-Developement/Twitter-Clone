@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common\";\nimport * as i2 from \"../auth/login/login.component\";\nimport * as i3 from \"../auth/register/register.component\";\nfunction WelcomeComponent_div_8_Template(rf, ctx) {\n  if (rf & 1) {\n    i0.ɵɵelementStart(0, \"div\");\n    i0.ɵɵelement(1, \"app-login\");\n    i0.ɵɵelementEnd();\n  }\n}\nfunction WelcomeComponent_div_9_Template(rf, ctx) {\n  if (rf & 1) {\n    i0.ɵɵelementStart(0, \"div\");\n    i0.ɵɵelement(1, \"app-register\");\n    i0.ɵɵelementEnd();\n  }\n}\nexport class WelcomeComponent {\n  constructor() {\n    this.showLoginForm = false;\n    this.showRegisterForm = false;\n  }\n  ngOnInit() {}\n}\nWelcomeComponent.ɵfac = function WelcomeComponent_Factory(t) {\n  return new (t || WelcomeComponent)();\n};\nWelcomeComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({\n  type: WelcomeComponent,\n  selectors: [[\"app-welcome\"]],\n  decls: 10,\n  vars: 2,\n  consts: [[1, \"welcome-container\"], [1, \"header\"], [1, \"buttons-and-forms\"], [3, \"click\"], [4, \"ngIf\"]],\n  template: function WelcomeComponent_Template(rf, ctx) {\n    if (rf & 1) {\n      i0.ɵɵelementStart(0, \"div\", 0)(1, \"div\", 1)(2, \"h1\");\n      i0.ɵɵtext(3, \"Welcome!\");\n      i0.ɵɵelementEnd()();\n      i0.ɵɵelementStart(4, \"div\", 2)(5, \"button\", 3);\n      i0.ɵɵlistener(\"click\", function WelcomeComponent_Template_button_click_5_listener() {\n        ctx.showLoginForm = true;\n        return ctx.showRegisterForm = false;\n      });\n      i0.ɵɵtext(6, \"Login\");\n      i0.ɵɵelementEnd();\n      i0.ɵɵelementStart(7, \"button\", 3);\n      i0.ɵɵlistener(\"click\", function WelcomeComponent_Template_button_click_7_listener() {\n        ctx.showRegisterForm = true;\n        return ctx.showLoginForm = false;\n      });\n      i0.ɵɵelementEnd();\n      i0.ɵɵtemplate(8, WelcomeComponent_div_8_Template, 2, 0, \"div\", 4);\n      i0.ɵɵtemplate(9, WelcomeComponent_div_9_Template, 2, 0, \"div\", 4);\n      i0.ɵɵelementEnd()();\n    }\n    if (rf & 2) {\n      i0.ɵɵadvance(8);\n      i0.ɵɵproperty(\"ngIf\", ctx.showLoginForm);\n      i0.ɵɵadvance(1);\n      i0.ɵɵproperty(\"ngIf\", ctx.showRegisterForm);\n    }\n  },\n  dependencies: [i1.NgIf, i2.LoginComponent, i3.RegisterComponent],\n  styles: [\".welcome-container[_ngcontent-%COMP%] {\\n    display: flex;\\n    flex-direction: column;\\n    align-items: center;\\n    justify-content: space-between;\\n    height: 90vh;\\n    background-color: #26a7de;\\n}\\n\\n.header[_ngcontent-%COMP%] {\\n    justify-content: flex-start;\\n    align-items: flex-start;\\n}\\n\\n.buttons-and-forms[_ngcontent-%COMP%] {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: space-between;\\n    align-items: center;\\n}\\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvd2VsY29tZS93ZWxjb21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLG1CQUFtQjtJQUNuQiw4QkFBOEI7SUFDOUIsWUFBWTtJQUNaLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLDJCQUEyQjtJQUMzQix1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLDhCQUE4QjtJQUM5QixtQkFBbUI7QUFDdkIiLCJzb3VyY2VzQ29udGVudCI6WyIud2VsY29tZS1jb250YWluZXIge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICBoZWlnaHQ6IDkwdmg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI2YTdkZTtcbn1cblxuLmhlYWRlciB7XG4gICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgIGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0O1xufVxuXG4uYnV0dG9ucy1hbmQtZm9ybXMge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */\"]\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";;;;;;IAQEA,2BAA2B;IAC1BA,4BAAuB;IACxBA,iBAAM;;;;;IAENA,2BAA8B;IAC7BA,+BAA6B;IAC9BA,iBAAM;;;ACPR,OAAM,MAAOC,gBAAgB;EAKzBC;IAHF,kBAAa,GAAY,KAAK;IAC5B,qBAAgB,GAAY,KAAK;EAEjB;EAClBC,QAAQ,IACR;;AAPWF,gBAAgB;mBAAhBA,gBAAgB;AAAA;AAAhBA,gBAAgB;QAAhBA,gBAAgB;EAAAG;EAAAC;EAAAC;EAAAC;EAAAC;IAAA;MDP7BR,8BAA+B;MAEzBA,wBAAQ;MAAAA,iBAAK;MAElBA,8BAA+B;MACtBA;QAAAS,oBAAyB,IAAI;QAAA,8BAAqB,KAAK;MAAA,EAAC;MAACT,qBAAK;MAAAA,iBAAS;MAC/EA,iCAAiE;MAAzDA;QAAAS,uBAA4B,IAAI;QAAA,2BAAkB,KAAK;MAAA,EAAC;MAACT,iBAAS;MAE1EA,iEAEM;MAENA,iEAEM;MACPA,iBAAM;;;MAPCA,eAAmB;MAAnBA,wCAAmB;MAInBA,eAAsB;MAAtBA,2CAAsB",
+    "names": [
+      "i0",
+      "WelcomeComponent",
+      "constructor",
+      "ngOnInit",
+      "selectors",
+      "decls",
+      "vars",
+      "consts",
+      "template",
+      "ctx"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.html",
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.ts"
+    ],
+    "sourcesContent": [
+      "<div class=\"welcome-container\">\n\t<div class=\"header\">\n\t\t<h1>Welcome!</h1>\n\t</div>\n\t<div class=\"buttons-and-forms\">\n\t\t<button (click)=\"showLoginForm = true; showRegisterForm = false\">Login</button>\n\t\t<button (click)=\"showRegisterForm = true; showLoginForm = false\"></button>\n\n\t\t<div *ngIf=\"showLoginForm\">\n\t\t\t<app-login></app-login>\n\t\t</div>\n\n\t\t<div *ngIf=\"showRegisterForm\">\n\t\t\t<app-register></app-register>\n\t\t</div>\n\t</div>\n</div>",
+      "import {Component, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})\nexport class WelcomeComponent implements OnInit{\n  \n  showLoginForm: boolean = false;\n    showRegisterForm: boolean = false;\n\n    constructor() { }\n  ngOnInit() {\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

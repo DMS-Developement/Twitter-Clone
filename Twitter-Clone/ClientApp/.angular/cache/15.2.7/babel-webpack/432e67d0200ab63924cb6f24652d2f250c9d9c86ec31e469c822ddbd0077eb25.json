@@ -1,0 +1,33 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nlet WelcomeComponent = class WelcomeComponent {\n  constructor(loginFlag, registerFlag) {\n    this.loginFlag = loginFlag;\n    this.registerFlag = registerFlag;\n  }\n  ngOnInit() {}\n  showHideLoginForm() {\n    this.loginFlag.changeLoginFlag(true);\n  }\n  showHideRegisterForm() {\n    this.registerFlag.changeRegisterFlag(true);\n  }\n};\nWelcomeComponent = __decorate([Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})], WelcomeComponent);\nexport { WelcomeComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAQxC,IAAMC,gBAAgB,GAAtB,MAAMA,gBAAgB;EAEzBC,YAAoBC,SAAwC,EAAUC,YAA2C;IAA7F,cAAS,GAATD,SAAS;IAAyC,iBAAY,GAAZC,YAAY;EAClF;EAEAC,QAAQ,IACR;EAEAC,iBAAiB;IACb,IAAI,CAACH,SAAS,CAACI,eAAe,CAAC,IAAI,CAAC;EACxC;EAEAC,oBAAoB;IAChB,IAAI,CAACJ,YAAY,CAACK,kBAAkB,CAAC,IAAI,CAAC;EAC9C;CACH;AAfYR,gBAAgB,eAL5BD,SAAS,CAAC;EACPU,QAAQ,EAAE,aAAa;EACvBC,WAAW,EAAE,0BAA0B;EACvCC,SAAS,EAAE,CAAC,yBAAyB;CACxC,CAAC,GACWX,gBAAgB,CAe5B;SAfYA,gBAAgB",
+    "names": [
+      "Component",
+      "WelcomeComponent",
+      "constructor",
+      "loginFlag",
+      "registerFlag",
+      "ngOnInit",
+      "showHideLoginForm",
+      "changeLoginFlag",
+      "showHideRegisterForm",
+      "changeRegisterFlag",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {LoginRegisterModalFlagService} from \"../login-register-modal-flag.service\";\n\n@Component({\n    selector: 'app-welcome',\n    templateUrl: './welcome.component.html',\n    styleUrls: ['./welcome.component.css']\n})\nexport class WelcomeComponent implements OnInit {\n\n    constructor(private loginFlag: LoginRegisterModalFlagService, private registerFlag: LoginRegisterModalFlagService) {\n    }\n\n    ngOnInit() {\n    }\n\n    showHideLoginForm() {\n        this.loginFlag.changeLoginFlag(true);\n    }\n    \n    showHideRegisterForm() {\n        this.registerFlag.changeRegisterFlag(true);\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

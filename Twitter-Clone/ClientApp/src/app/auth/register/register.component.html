@@ -1,0 +1,33 @@
+<div (click)="closeRegisterForm()" *ngIf="showRegisterForm" @fadeIn class="overlay">
+	<div (click)="$event.stopPropagation()" class="register">
+		<form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form">
+			<div class="input-element">
+				<label for="email">Email: </label>
+				<input formControlName="email" id="email" placeholder="Email" required type="email">
+				<div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="warning">
+					<p *ngIf="registerForm.get('email')?.hasError('required')">Email is required!</p>
+					<p *ngIf="registerForm.get('email')?.hasError('email')">Please enter a valid email!</p>
+				</div>
+			</div>
+
+			<div class="input-element">
+				<label for="username">Username: </label>
+				<input formControlName="username" id="username" placeholder="Username" required type="text">
+				<div *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched" class="warning">
+					<p *ngIf="registerForm.get('username')?.hasError('required')">Username is required!</p>
+				</div>
+			</div>
+
+			<div class="input-element">
+				<label for="password">Password: </label>
+				<input formControlName="password" id="password" placeholder="Password" required type="password">
+				<div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="warning">
+					<p *ngIf="registerForm.get('password')?.hasError('required')">Password is required!</p>
+					<p *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long!</p>
+				</div>
+			</div>
+
+			<button [disabled]="registerForm.invalid" type="submit">Register</button>
+		</form>
+	</div>
+</div>

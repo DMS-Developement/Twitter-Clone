@@ -11,7 +11,6 @@ public class UserMapper
     {
         _logger = logger;
     }
-
     public UserDto MapUserToDto(User user)
     {
         try
@@ -33,4 +32,5 @@ public class UserMapper
             throw;
         }
     }
+
 }

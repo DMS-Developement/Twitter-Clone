@@ -1,0 +1,25 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nlet WelcomeComponent = class WelcomeComponent {};\nWelcomeComponent = __decorate([Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})], WelcomeComponent);\nexport { WelcomeComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAASA,SAAS,QAAQ,eAAe;AAOlC,IAAMC,gBAAgB,GAAtB,MAAMA,gBAAgB,GAE5B;AAFYA,gBAAgB,eAL5BD,SAAS,CAAC;EACTE,QAAQ,EAAE,aAAa;EACvBC,WAAW,EAAE,0BAA0B;EACvCC,SAAS,EAAE,CAAC,yBAAyB;CACtC,CAAC,GACWH,gBAAgB,CAE5B;SAFYA,gBAAgB",
+    "names": [
+      "Component",
+      "WelcomeComponent",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.ts"
+    ],
+    "sourcesContent": [
+      "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})\nexport class WelcomeComponent {\n\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -1,0 +1,28 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nlet WelcomeComponent = class WelcomeComponent {\n  constructor(login) {\n    this.login = login;\n    this.showLoginForm = false;\n    this.showRegisterForm = false;\n  }\n  ngOnInit() {}\n};\nWelcomeComponent = __decorate([Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})], WelcomeComponent);\nexport { WelcomeComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAOxC,IAAMC,gBAAgB,GAAtB,MAAMA,gBAAgB;EAKzBC,YAAoBC,KAAK;IAAL,UAAK,GAALA,KAAK;IAH3B,kBAAa,GAAY,KAAK;IAC5B,qBAAgB,GAAY,KAAK;EAEJ;EAC/BC,QAAQ,IACR;CACD;AARYH,gBAAgB,eAL5BD,SAAS,CAAC;EACTK,QAAQ,EAAE,aAAa;EACvBC,WAAW,EAAE,0BAA0B;EACvCC,SAAS,EAAE,CAAC,yBAAyB;CACtC,CAAC,GACWN,gBAAgB,CAQ5B;SARYA,gBAAgB",
+    "names": [
+      "Component",
+      "WelcomeComponent",
+      "constructor",
+      "login",
+      "ngOnInit",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/welcome/welcome.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-welcome',\n  templateUrl: './welcome.component.html',\n  styleUrls: ['./welcome.component.css']\n})\nexport class WelcomeComponent implements OnInit{\n  \n  showLoginForm: boolean = false;\n    showRegisterForm: boolean = false;\n\n    constructor(private login) { }\n  ngOnInit() {\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -1,0 +1,54 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nimport { Validators } from \"@angular/forms\";\nimport { trigger, state, style, animate, transition } from \"@angular/animations\";\nlet RegisterComponent = class RegisterComponent {\n  constructor(formBuilder, loginFlag) {\n    this.formBuilder = formBuilder;\n    this.loginFlag = loginFlag;\n    this.showRegisterForm = false;\n  }\n  ngOnInit() {\n    this.registerForm = this.formBuilder.group({\n      'email': ['', [Validators.required, Validators.email]],\n      'username': ['', Validators.required],\n      'password': ['', [Validators.required, Validators.minLength(6)]]\n    });\n    this.loginFlag.currentRegisterFlag.subscribe(flag => this.showRegisterForm = flag);\n  }\n  onSubmit() {\n    if (this.registerForm.valid) {\n      const email = this.registerForm.get('email')?.value;\n      const username = this.registerForm.get('username')?.value;\n      const password = this.registerForm.get('password')?.value;\n    }\n  }\n  closeRegisterForm() {\n    this.loginFlag.changeRegisterFlag(false);\n  }\n};\nRegisterComponent = __decorate([Component({\n  selector: 'app-register',\n  templateUrl: './register.component.html',\n  styleUrls: ['./register.component.css'],\n  animations: [trigger('fadeIn', [state('void', style({\n    opacity: 0\n  })), transition('void <=> *', animate(100))])]\n})], RegisterComponent);\nexport { RegisterComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAC/C,SAAgCC,UAAU,QAAO,gBAAgB;AAEjE,SAAQC,OAAO,EAAEC,KAAK,EAAEC,KAAK,EAAEC,OAAO,EAAEC,UAAU,QAAkB,qBAAqB;AAelF,IAAMC,iBAAiB,GAAvB,MAAMA,iBAAiB;EAK1BC,YAAoBC,WAAwB,EAAUC,SAAwC;IAA1E,gBAAW,GAAXD,WAAW;IAAuB,cAAS,GAATC,SAAS;IAF/D,qBAAgB,GAAY,KAAK;EAEgE;EAGjGC,QAAQ;IACJ,IAAI,CAACC,YAAY,GAAG,IAAI,CAACH,WAAW,CAACI,KAAK,CAAC;MACvC,OAAO,EAAE,CAAC,EAAE,EAAE,CAACZ,UAAU,CAACa,QAAQ,EAAEb,UAAU,CAACc,KAAK,CAAC,CAAC;MACtD,UAAU,EAAE,CAAC,EAAE,EAAEd,UAAU,CAACa,QAAQ,CAAC;MACrC,UAAU,EAAE,CAAC,EAAE,EAAE,CAACb,UAAU,CAACa,QAAQ,EAAEb,UAAU,CAACe,SAAS,CAAC,CAAC,CAAC,CAAC;KAClE,CAAC;IAEF,IAAI,CAACN,SAAS,CAACO,mBAAmB,CAACC,SAAS,CAACC,IAAI,IAAI,IAAI,CAACC,gBAAgB,GAAGD,IAAI,CAAC;EACtF;EAEAE,QAAQ;IACJ,IAAI,IAAI,CAACT,YAAY,CAACU,KAAK,EAAE;MACzB,MAAMP,KAAK,GAAG,IAAI,CAACH,YAAY,CAACW,GAAG,CAAC,OAAO,CAAC,EAAEC,KAAK;MACnD,MAAMC,QAAQ,GAAG,IAAI,CAACb,YAAY,CAACW,GAAG,CAAC,UAAU,CAAC,EAAEC,KAAK;MACzD,MAAME,QAAQ,GAAG,IAAI,CAACd,YAAY,CAACW,GAAG,CAAC,UAAU,CAAC,EAAEC,KAAK;;EAEjE;EAEAG,iBAAiB;IACb,IAAI,CAACjB,SAAS,CAACkB,kBAAkB,CAAC,KAAK,CAAC;EAC5C;CACH;AA7BYrB,iBAAiB,eAb7BP,SAAS,CAAC;EACP6B,QAAQ,EAAE,cAAc;EACxBC,WAAW,EAAE,2BAA2B;EACxCC,SAAS,EAAE,CAAC,0BAA0B,CAAC;EACvCC,UAAU,EAAE,CACR9B,OAAO,CAAC,QAAQ,EAAE,CACdC,KAAK,CAAC,MAAM,EAAEC,KAAK,CAAC;IAChB6B,OAAO,EAAE;GACZ,CAAC,CAAC,EACH3B,UAAU,CAAC,YAAY,EAAED,OAAO,CAAC,GAAG,CAAC,CAAC,CACzC,CAAC;CAET,CAAC,GACWE,iBAAiB,CA6B7B;SA7BYA,iBAAiB",
+    "names": [
+      "Component",
+      "Validators",
+      "trigger",
+      "state",
+      "style",
+      "animate",
+      "transition",
+      "RegisterComponent",
+      "constructor",
+      "formBuilder",
+      "loginFlag",
+      "ngOnInit",
+      "registerForm",
+      "group",
+      "required",
+      "email",
+      "minLength",
+      "currentRegisterFlag",
+      "subscribe",
+      "flag",
+      "showRegisterForm",
+      "onSubmit",
+      "valid",
+      "get",
+      "value",
+      "username",
+      "password",
+      "closeRegisterForm",
+      "changeRegisterFlag",
+      "selector",
+      "templateUrl",
+      "styleUrls",
+      "animations",
+      "opacity"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/auth/register/register.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {FormBuilder, FormGroup, Validators} from \"@angular/forms\";\nimport {LoginRegisterModalFlagService} from \"../../login-register-modal-flag.service\";\nimport {trigger, state, style, animate, transition, keyframes} from \"@angular/animations\";\n\n@Component({\n    selector: 'app-register',\n    templateUrl: './register.component.html',\n    styleUrls: ['./register.component.css'],\n    animations: [\n        trigger('fadeIn', [\n            state('void', style({\n                opacity: 0\n            })),\n            transition('void <=> *', animate(100)),\n        ])\n    ]\n})\nexport class RegisterComponent implements OnInit {\n    registerForm!: FormGroup;\n\n    showRegisterForm: boolean = false\n\n    constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService) {}\n\n\n    ngOnInit() {\n        this.registerForm = this.formBuilder.group({\n            'email': ['', [Validators.required, Validators.email]],\n            'username': ['', Validators.required],\n            'password': ['', [Validators.required, Validators.minLength(6)]]\n        });\n\n        this.loginFlag.currentRegisterFlag.subscribe(flag => this.showRegisterForm = flag);\n    }\n\n    onSubmit() {\n        if (this.registerForm.valid) {\n            const email = this.registerForm.get('email')?.value;\n            const username = this.registerForm.get('username')?.value;\n            const password = this.registerForm.get('password')?.value;\n        }\n    }\n\n    closeRegisterForm() {\n        this.loginFlag.changeRegisterFlag(false);\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}
