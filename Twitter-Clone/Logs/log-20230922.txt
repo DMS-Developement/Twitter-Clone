@@ -1,0 +1,6 @@
+2023-09-22 13:30:17.976 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-22 13:30:18.198 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-22 13:30:18.198 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-22 13:30:18.199 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-22 13:30:18.199 -04:00 [INF] Hosting environment: Development
+2023-09-22 13:30:18.199 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
