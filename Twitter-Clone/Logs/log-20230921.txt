@@ -1,0 +1,491 @@
+2023-09-21 19:37:01.784 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 19:37:02.032 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 19:37:02.032 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 19:37:02.033 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 19:37:02.033 -04:00 [INF] Hosting environment: Development
+2023-09-21 19:37:02.033 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 19:37:02.712 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 19:37:02.739 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 19:37:02.787 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 19:37:02.792 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 80.6326ms
+2023-09-21 19:37:02.958 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/apple-touch-icon-precomposed.png - -
+2023-09-21 19:37:03.017 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/apple-touch-icon-precomposed.png - - - 404 0 - 58.2619ms
+2023-09-21 19:37:03.021 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/apple-touch-icon.png - -
+2023-09-21 19:37:03.022 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/apple-touch-icon.png - - - 404 0 - 0.9342ms
+2023-09-21 19:37:05.893 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 19:37:05.895 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 19:37:05.896 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 2.3564ms
+2023-09-21 19:37:08.160 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 19:37:48.727 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:37:48.729 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:37:48.730 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 2.7032ms
+2023-09-21 19:37:48.733 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 44
+2023-09-21 19:37:48.733 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:37:48.737 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:37:48.754 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:37:49.628 -04:00 [ERR] An error occurred using the connection to database 'TwitterClone' on server ''.
+2023-09-21 19:37:49.643 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Twitter_Clone.Data.TwitterCloneDb'.
+Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+2023-09-21 19:37:49.654 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 896.4409ms
+2023-09-21 19:37:49.659 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:37:49.666 -04:00 [ERR] Something went wrong: Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Twitter_Clone.Controllers.AuthController.Login(LoginDto userLogin) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Controllers/AuthController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Twitter_Clone.Errors.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Errors/ExceptionMiddleware.cs:line 18
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+2023-09-21 19:37:49.694 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 44 - 500 - application/json 960.9632ms
+2023-09-21 19:38:03.357 -04:00 [INF] Application is shutting down...
+2023-09-21 19:38:09.703 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 19:38:09.914 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 19:38:09.915 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 19:38:09.915 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 19:38:09.915 -04:00 [INF] Hosting environment: Development
+2023-09-21 19:38:09.915 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 19:38:11.265 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 19:38:11.272 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 19:38:11.351 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 19:38:11.352 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 88.1782ms
+2023-09-21 19:38:15.696 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 19:38:26.590 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:38:26.595 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:38:26.601 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 10.5675ms
+2023-09-21 19:38:26.607 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 46
+2023-09-21 19:38:26.607 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:38:26.650 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:38:26.662 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:38:27.479 -04:00 [ERR] An error occurred using the connection to database 'TwitterClone' on server ''.
+2023-09-21 19:38:27.494 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Twitter_Clone.Data.TwitterCloneDb'.
+Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+2023-09-21 19:38:27.507 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 840.4805ms
+2023-09-21 19:38:27.512 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:38:27.519 -04:00 [ERR] Something went wrong: Npgsql.PostgresException (0x80004005): 3D000: database "TwitterClone" does not exist
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Twitter_Clone.Controllers.AuthController.Login(LoginDto userLogin) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Controllers/AuthController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Twitter_Clone.Errors.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Errors/ExceptionMiddleware.cs:line 18
+  Exception data:
+    Severity: FATAL
+    SqlState: 3D000
+    MessageText: database "TwitterClone" does not exist
+    File: postinit.c
+    Line: 947
+    Routine: InitPostgres
+2023-09-21 19:38:27.547 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 46 - 500 - application/json 940.6010ms
+2023-09-21 19:39:53.722 -04:00 [INF] Application is shutting down...
+2023-09-21 19:39:58.739 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 19:39:58.968 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 19:39:58.968 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 19:39:58.969 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 19:39:58.969 -04:00 [INF] Hosting environment: Development
+2023-09-21 19:39:58.969 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 19:41:21.436 -04:00 [INF] Application is shutting down...
+2023-09-21 19:41:27.118 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 19:41:27.327 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 19:41:27.327 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 19:41:27.328 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 19:41:27.328 -04:00 [INF] Hosting environment: Development
+2023-09-21 19:41:27.328 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 19:41:37.230 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 19:41:37.265 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 19:41:37.316 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 19:41:37.321 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 92.2635ms
+2023-09-21 19:41:37.634 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/favicon.ico - -
+2023-09-21 19:41:37.661 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/favicon.ico - - - 404 0 - 27.4272ms
+2023-09-21 19:41:41.264 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 19:41:47.038 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:41:47.041 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:41:47.043 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 4.2583ms
+2023-09-21 19:41:47.045 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 48
+2023-09-21 19:41:47.046 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:41:47.051 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:41:47.075 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:41:48.030 -04:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 19:41:48.061 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-09-21 19:41:48.066 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 987.0345ms
+2023-09-21 19:41:48.067 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:41:48.079 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 48 - 400 - text/plain;+charset=utf-8 1033.8202ms
+2023-09-21 19:43:46.426 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:43:46.427 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:43:46.427 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 0.8643ms
+2023-09-21 19:43:46.432 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-21 19:43:46.434 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:43:46.446 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:43:46.449 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:43:46.474 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 19:43:46.475 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-09-21 19:43:46.476 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 26.8369ms
+2023-09-21 19:43:46.476 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:43:46.476 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 400 - text/plain;+charset=utf-8 44.4575ms
+2023-09-21 19:44:03.610 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:44:03.610 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:44:03.611 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 0.5202ms
+2023-09-21 19:44:03.614 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 46
+2023-09-21 19:44:03.614 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:44:03.615 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:44:03.615 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:44:03.672 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 19:44:03.673 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-09-21 19:44:03.673 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 58.0029ms
+2023-09-21 19:44:03.673 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:44:03.673 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 46 - 400 - text/plain;+charset=utf-8 59.7632ms
+2023-09-21 19:45:07.174 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:45:07.178 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:45:07.181 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 6.9019ms
+2023-09-21 19:45:07.214 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 49
+2023-09-21 19:45:07.214 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:45:07.214 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:45:07.214 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:45:07.218 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 19:45:07.219 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-09-21 19:45:07.219 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 4.4585ms
+2023-09-21 19:45:07.219 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:45:07.219 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 49 - 400 - text/plain;+charset=utf-8 5.7770ms
+2023-09-21 19:47:46.921 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/register - -
+2023-09-21 19:47:46.922 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:47:46.923 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/register - - - 204 - - 2.5495ms
+2023-09-21 19:47:46.932 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/register application/json 77
+2023-09-21 19:47:46.933 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:47:46.935 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Register (Twitter-Clone)'
+2023-09-21 19:47:46.942 -04:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Twitter_Clone.Models.AuthDTOs.RegisterDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:47:46.986 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userRegister_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS u
+    WHERE u."Username" = @__userRegister_Username_0)
+2023-09-21 19:47:47.304 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedAt", "Email", "LastLogin", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2023-09-21 19:47:47.317 -04:00 [INF] Executing CreatedResult, writing value of type 'Twitter_Clone.Models.AuthDTOs.RegisterResponse'.
+2023-09-21 19:47:47.318 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Register (Twitter-Clone) in 376.0909ms
+2023-09-21 19:47:47.318 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Register (Twitter-Clone)'
+2023-09-21 19:47:47.319 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/register application/json 77 - 201 - application/json;+charset=utf-8 386.5266ms
+2023-09-21 19:47:59.440 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 19:47:59.441 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:47:59.441 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 1.0569ms
+2023-09-21 19:47:59.451 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-21 19:47:59.451 -04:00 [INF] CORS policy execution successful.
+2023-09-21 19:47:59.452 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:47:59.452 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 19:47:59.466 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 19:47:59.652 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 19:47:59.719 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.AuthDTOs.LoginResponse'.
+2023-09-21 19:47:59.726 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 266.4333ms
+2023-09-21 19:47:59.726 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 19:47:59.726 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 - application/json;+charset=utf-8 275.3534ms
+2023-09-21 20:10:49.405 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 63
+2023-09-21 20:10:49.407 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:10:49.407 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 20:10:49.441 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 20:10:49.602 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 20:10:49.603 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.AuthDTOs.LoginResponse'.
+2023-09-21 20:10:49.603 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 195.7147ms
+2023-09-21 20:10:49.603 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:10:49.603 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 63 - 200 - application/json;+charset=utf-8 197.6701ms
+2023-09-21 20:11:05.473 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/User/ - -
+2023-09-21 20:11:05.475 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/User/ - - - 404 0 - 1.4947ms
+2023-09-21 20:11:10.596 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:11:10.604 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:11:10.612 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:11:10.613 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 16.5418ms
+2023-09-21 20:11:23.422 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:11:23.425 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:11:23.426 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:11:23.426 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 4.0924ms
+2023-09-21 20:11:28.609 -04:00 [INF] Application is shutting down...
+2023-09-21 20:11:40.760 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 20:11:40.989 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 20:11:40.989 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 20:11:40.990 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 20:11:40.990 -04:00 [INF] Hosting environment: Development
+2023-09-21 20:11:40.990 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 20:12:06.914 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 20:12:06.939 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 20:12:06.975 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 20:12:06.981 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 67.3538ms
+2023-09-21 20:12:10.702 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 20:12:16.079 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 63
+2023-09-21 20:12:16.116 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:12:16.128 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 20:12:17.052 -04:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 20:12:17.421 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 20:12:17.496 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2023-09-21 20:12:17.499 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 1367.911ms
+2023-09-21 20:12:17.500 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:12:17.511 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 63 - 200 0 - 1431.7777ms
+2023-09-21 20:12:22.137 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:12:22.153 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:12:22.156 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:12:22.156 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 19.4279ms
+2023-09-21 20:12:27.432 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:12:27.436 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:12:27.439 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:12:27.440 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 7.4682ms
+2023-09-21 20:12:31.220 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:12:31.222 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:12:31.223 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:12:31.223 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 3.1390ms
+2023-09-21 20:15:33.541 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Users/ - -
+2023-09-21 20:15:33.541 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-09-21 20:15:33.542 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-21 20:15:33.542 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Users/ - - - 401 0 - 1.1957ms
+2023-09-21 20:15:51.081 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 20:15:51.084 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:15:51.085 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 4.1700ms
+2023-09-21 20:15:51.096 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-21 20:15:51.096 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:15:51.098 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:15:51.098 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 20:15:51.131 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 20:15:51.289 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 20:15:51.290 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2023-09-21 20:15:51.290 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 191.518ms
+2023-09-21 20:15:51.290 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:15:51.290 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 0 - 194.3478ms
+2023-09-21 20:33:28.633 -04:00 [INF] Application is shutting down...
+2023-09-21 20:33:33.710 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 20:33:33.909 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 20:33:33.909 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 20:33:33.910 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 20:33:33.910 -04:00 [INF] Hosting environment: Development
+2023-09-21 20:33:33.910 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 20:33:35.150 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 20:33:35.176 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 20:33:35.237 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 20:33:35.242 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 92.0535ms
+2023-09-21 20:33:39.210 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 20:34:09.896 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 20:34:09.910 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:34:09.912 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 16.2842ms
+2023-09-21 20:34:09.917 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-21 20:34:09.918 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:34:09.964 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:34:09.977 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 20:34:10.869 -04:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 20:34:11.234 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 20:34:11.294 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.User'.
+2023-09-21 20:34:11.314 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 1334.289ms
+2023-09-21 20:34:11.315 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:34:11.325 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 - application/json;+charset=utf-8 1407.6773ms
+2023-09-21 20:38:24.268 -04:00 [INF] Application is shutting down...
+2023-09-21 20:38:26.153 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-21 20:38:26.369 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-21 20:38:26.369 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-21 20:38:26.369 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 20:38:26.369 -04:00 [INF] Hosting environment: Development
+2023-09-21 20:38:26.369 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-21 20:38:29.197 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-21 20:38:29.224 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-21 20:38:29.259 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-21 20:38:29.263 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 66.8462ms
+2023-09-21 20:38:32.861 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-21 20:38:44.264 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-21 20:38:44.272 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:38:44.273 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 9.3645ms
+2023-09-21 20:38:44.277 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-21 20:38:44.278 -04:00 [INF] CORS policy execution successful.
+2023-09-21 20:38:44.321 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:38:44.332 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-21 20:38:45.265 -04:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-21 20:38:45.638 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-21 20:38:45.698 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.RegularDTOs.UserDto'.
+2023-09-21 20:38:45.717 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 1382.2804ms
+2023-09-21 20:38:45.718 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-21 20:38:45.728 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 - application/json;+charset=utf-8 1450.5658ms

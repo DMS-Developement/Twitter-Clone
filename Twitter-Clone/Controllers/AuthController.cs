@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Twitter_Clone.Data;
 using Twitter_Clone.Models;
 using Twitter_Clone.Models.AuthDTOs;
+using Twitter_Clone.Models.RegularDTOs;
 using Twitter_Clone.Services;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
@@ -58,7 +59,19 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login(LoginDto userLogin)
     {
         var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == userLogin.Username);
+
         if (user == null || !PasswordHasher.VerifyPassword(userLogin.Password, user.PasswordHash)) return BadRequest("Invalid username or password");
+
+        var userResponse = new UserDto
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            CreatedAt = user.CreatedAt,
+            LastLogin = user.LastLogin,
+            Followers = user.Followers,
+            Following = user.Following
+        };
 
         // Update LastLogin
         user.LastLogin = DateTime.UtcNow;
@@ -74,24 +87,27 @@ public class AuthController : ControllerBase
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Key"]!));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+        var tokenExpiryTime = DateTime.Now.AddMinutes(1440);
+
         var token = new JwtSecurityToken(
             _configuration["JwtSettings:Issuer"],
             _configuration["JwtSettings:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(1440),
+            expires: tokenExpiryTime,
             signingCredentials: credentials
         );
 
-        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+        var jwt = new JwtSecurityTokenHandler().WriteToken(token);
 
-        var response = new LoginResponse
+        var cookieOptions = new CookieOptions
         {
-            Username = user.Username,
-            Token = tokenString,
-            ExpiresAt = DateTime.Now.AddMinutes(1440)
+            Expires = tokenExpiryTime,
+            HttpOnly = true,
+            Secure = true
         };
 
-        return Ok(response);
-    }
+        Response.Cookies.Append("jwt_cookie", jwt, cookieOptions);
 
+        return Ok(userResponse);
+    }
 }
