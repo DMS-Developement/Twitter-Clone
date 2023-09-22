@@ -5,6 +5,7 @@ import {LoginRegisterModalFlagService} from "../../login-register-modal-flag.ser
 import {catchError, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {CurrentuserService} from 'src/app/currentuser.service';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   showLoginForm: boolean = false
 
-  constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService, private http: HttpClient, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService, private http: HttpClient, private router: Router, private currentUserService: CurrentuserService) {
   }
 
   ngOnInit() {
@@ -53,7 +54,8 @@ export class LoginComponent implements OnInit {
         tap(response => {
           console.log(response);
           this.closeLoginForm();
-          this.router.navigate(['']);
+          this.currentUserService.setItem('currentUser', response);
+          this.router.navigate(['home']);
         }),
         catchError(error => {
           const loginErrorMessage = "Invalid username or password."

@@ -1,0 +1,44 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { BrowserModule } from '@angular/platform-browser';\nimport { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { RouterModule } from '@angular/router';\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { AppComponent } from './app.component';\nimport { NavMenuComponent } from './nav-menu/nav-menu.component';\nimport { LoginComponent } from './auth/login/login.component';\nimport { RegisterComponent } from './auth/register/register.component';\nimport { WelcomeComponent } from './welcome/welcome.component';\nimport { HomeComponent } from './home/home.component';\nlet AppModule = class AppModule {};\nAppModule = __decorate([NgModule({\n  declarations: [AppComponent, NavMenuComponent, LoginComponent, RegisterComponent, WelcomeComponent, HomeComponent],\n  imports: [BrowserModule.withServerTransition({\n    appId: 'ng-cli-universal'\n  }), ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule, FormsModule, RouterModule.forRoot([{\n    path: '',\n    component: WelcomeComponent,\n    pathMatch: 'full'\n  }])],\n  providers: [],\n  bootstrap: [AppComponent]\n})], AppModule);\nexport { AppModule };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,aAAa,QAAO,2BAA2B;AACvD,SAAQC,QAAQ,QAAO,eAAe;AACtC,SAAQC,WAAW,EAAEC,mBAAmB,QAAO,gBAAgB;AAC/D,SAAQC,gBAAgB,QAAO,sBAAsB;AACrD,SAAQC,YAAY,QAAO,iBAAiB;AAC5C,SAAQC,uBAAuB,QAAO,sCAAsC;AAE5E,SAAQC,YAAY,QAAO,iBAAiB;AAC5C,SAAQC,gBAAgB,QAAO,+BAA+B;AAC9D,SAAQC,cAAc,QAAO,8BAA8B;AAC3D,SAAQC,iBAAiB,QAAO,oCAAoC;AACpE,SAAQC,gBAAgB,QAAO,6BAA6B;AAC5D,SAAQC,aAAa,QAAO,uBAAuB;AAwB5C,IAAMC,SAAS,GAAf,MAAMA,SAAS,GAAI;AAAbA,SAAS,eAtBrBZ,QAAQ,CAAC;EACRa,YAAY,EAAE,CACZP,YAAY,EACZC,gBAAgB,EAChBC,cAAc,EACdC,iBAAiB,EACjBC,gBAAgB,EAChBC,aAAa,CACd;EACDG,OAAO,EAAE,CACPf,aAAa,CAACgB,oBAAoB,CAAC;IAAEC,KAAK,EAAE;EAAkB,CAAE,CAAC,EACjEd,mBAAmB,EACnBG,uBAAuB,EACvBF,gBAAgB,EAChBF,WAAW,EACXG,YAAY,CAACa,OAAO,CAAC,CACnB;IAACC,IAAI,EAAE,EAAE;IAAEC,SAAS,EAAET,gBAAgB;IAAEU,SAAS,EAAE;EAAM,CAAC,CAC3D,CAAC,CACH;EACDC,SAAS,EAAE,EAAE;EACbC,SAAS,EAAE,CAAChB,YAAY;CACzB,CAAC,GACWM,SAAS,CAAI;SAAbA,SAAS",
+    "names": [
+      "BrowserModule",
+      "NgModule",
+      "FormsModule",
+      "ReactiveFormsModule",
+      "HttpClientModule",
+      "RouterModule",
+      "BrowserAnimationsModule",
+      "AppComponent",
+      "NavMenuComponent",
+      "LoginComponent",
+      "RegisterComponent",
+      "WelcomeComponent",
+      "HomeComponent",
+      "AppModule",
+      "declarations",
+      "imports",
+      "withServerTransition",
+      "appId",
+      "forRoot",
+      "path",
+      "component",
+      "pathMatch",
+      "providers",
+      "bootstrap"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/app.module.ts"
+    ],
+    "sourcesContent": [
+      "import {BrowserModule} from '@angular/platform-browser';\nimport {NgModule} from '@angular/core';\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\nimport {HttpClientModule} from '@angular/common/http';\nimport {RouterModule} from '@angular/router';\nimport {BrowserAnimationsModule} from \"@angular/platform-browser/animations\";\n\nimport {AppComponent} from './app.component';\nimport {NavMenuComponent} from './nav-menu/nav-menu.component';\nimport {LoginComponent} from './auth/login/login.component';\nimport {RegisterComponent} from './auth/register/register.component';\nimport {WelcomeComponent} from './welcome/welcome.component';\nimport {HomeComponent} from './home/home.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    NavMenuComponent,\n    LoginComponent,\n    RegisterComponent,\n    WelcomeComponent,\n    HomeComponent\n  ],\n  imports: [\n    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    HttpClientModule,\n    FormsModule,\n    RouterModule.forRoot([\n      {path: '', component: WelcomeComponent, pathMatch: 'full'},\n    ])\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

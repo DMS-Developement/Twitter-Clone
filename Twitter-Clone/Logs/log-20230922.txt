@@ -4,3 +4,41 @@
 2023-09-22 13:30:18.199 -04:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-09-22 13:30:18.199 -04:00 [INF] Hosting environment: Development
 2023-09-22 13:30:18.199 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-22 13:34:42.416 -04:00 [INF] Application is shutting down...
+2023-09-22 13:35:16.974 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-22 13:35:17.206 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-22 13:35:17.207 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-22 13:35:17.207 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-22 13:35:17.207 -04:00 [INF] Hosting environment: Development
+2023-09-22 13:35:17.207 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-22 13:36:07.881 -04:00 [INF] Application is shutting down...
+2023-09-22 13:36:36.512 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-22 13:36:36.725 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-22 13:36:36.725 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-22 13:36:36.725 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-22 13:36:36.725 -04:00 [INF] Hosting environment: Development
+2023-09-22 13:36:36.726 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-22 13:36:45.067 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-22 13:36:45.101 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-22 13:36:45.172 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-22 13:36:45.178 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 111.2533ms
+2023-09-22 13:36:51.354 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-22 13:37:01.504 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-22 13:37:01.508 -04:00 [INF] CORS policy execution successful.
+2023-09-22 13:37:01.510 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 5.4289ms
+2023-09-22 13:37:01.515 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-22 13:37:01.516 -04:00 [INF] CORS policy execution successful.
+2023-09-22 13:37:01.565 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-22 13:37:01.579 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-22 13:37:03.042 -04:00 [INF] Executed DbCommand (48ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-22 13:37:03.637 -04:00 [INF] Executed DbCommand (14ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "Username" = @p4
+WHERE "Id" = @p5;
+2023-09-22 13:37:03.722 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.RegularDTOs.UserDto'.
+2023-09-22 13:37:03.756 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 2173.1271ms
+2023-09-22 13:37:03.758 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-22 13:37:03.793 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 - application/json;+charset=utf-8 2277.8154ms

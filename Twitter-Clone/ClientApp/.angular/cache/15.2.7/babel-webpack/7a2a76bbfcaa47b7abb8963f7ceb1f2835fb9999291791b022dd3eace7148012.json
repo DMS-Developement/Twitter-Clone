@@ -1,0 +1,33 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nexport class CurrentuserService {\n  constructor() {}\n  setItem(key, value) {\n    sessionStorage.setItem(key, JSON.stringify(value));\n  }\n  getItem(key) {\n    const value = sessionStorage.getItem(key);\n    return value ? JSON.parse(value) : null;\n  }\n  clear() {\n    sessionStorage.clear();\n  }\n}\nCurrentuserService.ɵfac = function CurrentuserService_Factory(t) {\n  return new (t || CurrentuserService)();\n};\nCurrentuserService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: CurrentuserService,\n  factory: CurrentuserService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";AAKA,OAAM,MAAOA,kBAAkB;EAE7BC,eACA;EAEOC,OAAO,CAACC,GAAW,EAAEC,KAAU;IACpCC,cAAc,CAACH,OAAO,CAACC,GAAG,EAAEG,IAAI,CAACC,SAAS,CAACH,KAAK,CAAC,CAAC;EACpD;EAEOI,OAAO,CAACL,GAAW;IACxB,MAAMC,KAAK,GAAGC,cAAc,CAACG,OAAO,CAACL,GAAG,CAAC;IACzC,OAAOC,KAAK,GAAEE,IAAI,CAACG,KAAK,CAACL,KAAK,CAAC,GAAE,IAAI;EACvC;EAEOM,KAAK;IACVL,cAAc,CAACK,KAAK,EAAE;EACxB;;AAhBWV,kBAAkB;mBAAlBA,kBAAkB;AAAA;AAAlBA,kBAAkB;SAAlBA,kBAAkB;EAAAW,SAAlBX,kBAAkB;EAAAY,YAFjB;AAAM",
+    "names": [
+      "CurrentuserService",
+      "constructor",
+      "setItem",
+      "key",
+      "value",
+      "sessionStorage",
+      "JSON",
+      "stringify",
+      "getItem",
+      "parse",
+      "clear",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/currentuser.service.ts"
+    ],
+    "sourcesContent": [
+      "import {Injectable} from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class CurrentuserService {\n\n  constructor() {\n  }\n\n  public setItem(key: string, value: any): void {\n    sessionStorage.setItem(key, JSON.stringify(value));\n  }\n\n  public getItem(key: string): any {\n    const value = sessionStorage.getItem(key);\n    return value? JSON.parse(value): null;\n  }\n\n  public clear(): void {\n    sessionStorage.clear();\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}
