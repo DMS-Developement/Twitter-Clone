@@ -11,6 +11,7 @@ public class UserMapper
     {
         _logger = logger;
     }
+
     public UserDto MapUserToDto(User user)
     {
         try
@@ -20,6 +21,7 @@ public class UserMapper
                 Id = user.Id,
                 Username = user.Username,
                 Email = user.Email,
+                ProfileImagePath = user.ProfileImagePath,
                 CreatedAt = user.CreatedAt,
                 LastLogin = user.LastLogin,
                 Followers = user.Followers,
@@ -32,5 +34,4 @@ public class UserMapper
             throw;
         }
     }
-
 }

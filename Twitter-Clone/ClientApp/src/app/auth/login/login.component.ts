@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
     this.http.post('https://localhost:7282/api/Auth/login', user).pipe(
         tap(response => {
-          console.log(response);
+          console.table(response);
           this.closeLoginForm();
           this.currentUserService.setItem('currentUser', response);
           this.router.navigate(['home']);

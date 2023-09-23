@@ -67,6 +67,7 @@ public class AuthController : ControllerBase
             Id = user.Id,
             Username = user.Username,
             Email = user.Email,
+            ProfileImagePath = user.ProfileImagePath,
             CreatedAt = user.CreatedAt,
             LastLogin = user.LastLogin,
             Followers = user.Followers,

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Events;
+using Supabase;
 using Twitter_Clone.Data;
 using Twitter_Clone.Errors;
 using Twitter_Clone.Interfaces;
@@ -31,8 +32,18 @@ builder.Services.AddScoped<TweetMapper>();
 var jwtSettingsSection = builder.Configuration.GetSection("JwtSettings");
 var jwtSettings = jwtSettingsSection.Get<Dictionary<string, string>>();
 
+// Add Supabase Client to DI
+var url = builder.Configuration["SupabaseUrl"];
+var key = builder.Configuration["AnonKey"];
+var supabaseOptions = new SupabaseOptions
+{
+    AutoRefreshToken = true,
+    AutoConnectRealtime = true
+};
+builder.Services.AddSingleton(provider => new Client(url, key, supabaseOptions));
+
 builder.Services.AddDbContext<TwitterCloneDb>(options =>
-    options.UseNpgsql(builder.Configuration["PostgresConnectionString"])); // Added DbContext
+    options.UseNpgsql(builder.Configuration["SupabaseConnectionString"])); // Added DbContext
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

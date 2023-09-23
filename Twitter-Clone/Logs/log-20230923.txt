@@ -1,0 +1,268 @@
+2023-09-23 00:00:19.352 -04:00 [INF] Application is shutting down...
+2023-09-23 00:00:28.586 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:00:28.819 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:00:28.819 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:00:28.820 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:00:28.820 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:00:28.820 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:00:30.502 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:00:30.532 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:00:30.609 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:00:30.613 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 112.2775ms
+2023-09-23 00:00:34.579 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:00:37.831 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------548923090866030108820829 2816210
+2023-09-23 00:00:37.872 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:00:37.887 -04:00 [INF] Route matched with {action = "UploadImage", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(System.String, Microsoft.AspNetCore.Http.IFormFile) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:00:39.424 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-09-23 00:00:39.429 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone) in 1538.288ms
+2023-09-23 00:00:39.432 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:00:39.439 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------548923090866030108820829 2816210 - 400 - text/plain;+charset=utf-8 1607.7050ms
+2023-09-23 00:04:03.353 -04:00 [INF] Application is shutting down...
+2023-09-23 00:04:09.803 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:04:10.020 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:04:10.020 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:04:10.021 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:04:10.021 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:04:10.021 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:04:10.124 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:04:10.151 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:04:10.202 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:04:10.207 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 84.5248ms
+2023-09-23 00:04:14.205 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:04:17.164 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------877100700459643513335369 2816210
+2023-09-23 00:04:17.205 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:04:17.220 -04:00 [INF] Route matched with {action = "UploadImage", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(System.String, Microsoft.AspNetCore.Http.IFormFile) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:04:23.978 -04:00 [INF] Executed DbCommand (41ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:04:24.118 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "ProfileImagePath" = @p0
+WHERE "Id" = @p1;
+2023-09-23 00:04:24.131 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-23 00:04:24.151 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone) in 6927.6445ms
+2023-09-23 00:04:24.152 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:04:24.166 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------877100700459643513335369 2816210 - 200 - application/json;+charset=utf-8 7002.2048ms
+2023-09-23 00:06:40.667 -04:00 [INF] Application is shutting down...
+2023-09-23 00:06:46.155 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:06:46.422 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:06:46.424 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:06:46.425 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:06:46.425 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:06:46.425 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:06:46.839 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:06:46.901 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:06:46.961 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:06:46.967 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 128.9706ms
+2023-09-23 00:06:50.876 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:08:06.500 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------450547169315101501470178 2816210
+2023-09-23 00:08:06.565 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:08:06.576 -04:00 [INF] Route matched with {action = "UploadImage", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(System.String, Microsoft.AspNetCore.Http.IFormFile) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:09:44.027 -04:00 [INF] Executed DbCommand (48ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:11:06.880 -04:00 [INF] Executed DbCommand (36ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "ProfileImagePath" = @p0
+WHERE "Id" = @p1;
+2023-09-23 00:11:15.564 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-23 00:11:15.597 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone) in 189014.1976ms
+2023-09-23 00:11:15.598 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.UploadImage (Twitter-Clone)'
+2023-09-23 00:11:15.615 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------450547169315101501470178 2816210 - 200 - application/json;+charset=utf-8 189112.9765ms
+2023-09-23 00:31:54.441 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:31:54.636 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:31:54.636 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:31:54.636 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:31:54.636 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:31:54.637 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:31:55.057 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:31:55.081 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:31:55.123 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:31:55.127 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 70.5678ms
+2023-09-23 00:31:59.258 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:32:32.359 -04:00 [INF] Application is shutting down...
+2023-09-23 00:32:35.747 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:32:35.958 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:32:35.958 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:32:35.959 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:32:35.959 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:32:35.959 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:32:36.208 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:32:36.233 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:32:36.294 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:32:36.298 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 90.1960ms
+2023-09-23 00:32:39.311 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:32:40.091 -04:00 [INF] SPA proxy is ready. Redirecting to https://localhost:44438.
+2023-09-23 00:32:40.091 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:32:40.091 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 302 0 - 779.6555ms
+2023-09-23 00:32:57.702 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - -
+2023-09-23 00:32:57.764 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:32:57.779 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:32:58.930 -04:00 [INF] Executed DbCommand (39ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:32:59.555 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 1773.5858ms
+2023-09-23 00:32:59.556 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:32:59.568 -04:00 [ERR] Something went wrong: Supabase.Storage.Exceptions.SupabaseStorageException: The resource was not found
+   at Supabase.Storage.Extensions.HttpClientProgress.DownloadDataAsync(HttpClient client, Uri uri, Dictionary`2 headers, IProgress`1 progress, CancellationToken cancellationToken)
+   at Supabase.Storage.StorageFileApi.DownloadBytes(String url, TransformOptions transformOptions, EventHandler`1 onProgress)
+   at Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic(String username) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Controllers/ImagesController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Twitter_Clone.Errors.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Errors/ExceptionMiddleware.cs:line 18
+2023-09-23 00:32:59.602 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - - - 500 - application/json 1900.2960ms
+2023-09-23 00:33:20.081 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - -
+2023-09-23 00:33:20.088 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:33:20.089 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:33:20.122 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:33:20.305 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 215.7025ms
+2023-09-23 00:33:20.306 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:33:20.312 -04:00 [ERR] Something went wrong: Supabase.Storage.Exceptions.SupabaseStorageException: The resource was not found
+   at Supabase.Storage.Extensions.HttpClientProgress.DownloadDataAsync(HttpClient client, Uri uri, Dictionary`2 headers, IProgress`1 progress, CancellationToken cancellationToken)
+   at Supabase.Storage.StorageFileApi.DownloadBytes(String url, TransformOptions transformOptions, EventHandler`1 onProgress)
+   at Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic(String username) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Controllers/ImagesController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Twitter_Clone.Errors.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Errors/ExceptionMiddleware.cs:line 18
+2023-09-23 00:33:20.314 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 500 - application/json 232.8531ms
+2023-09-23 00:33:34.547 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - -
+2023-09-23 00:33:34.553 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:33:34.554 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:33:34.600 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:33:34.785 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 230.8726ms
+2023-09-23 00:33:34.786 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:33:34.789 -04:00 [ERR] Something went wrong: Supabase.Storage.Exceptions.SupabaseStorageException: The resource was not found
+   at Supabase.Storage.Extensions.HttpClientProgress.DownloadDataAsync(HttpClient client, Uri uri, Dictionary`2 headers, IProgress`1 progress, CancellationToken cancellationToken)
+   at Supabase.Storage.StorageFileApi.DownloadBytes(String url, TransformOptions transformOptions, EventHandler`1 onProgress)
+   at Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic(String username) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Controllers/ImagesController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Twitter_Clone.Errors.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/Errors/ExceptionMiddleware.cs:line 18
+2023-09-23 00:33:34.791 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - - - 500 - application/json 243.8713ms
+2023-09-23 00:35:02.547 -04:00 [INF] Application is shutting down...
+2023-09-23 00:35:24.716 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:35:24.992 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:35:24.994 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:35:25.020 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:35:25.020 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:35:25.020 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:35:28.967 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:35:29.009 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:35:29.072 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:35:29.083 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 117.0437ms
+2023-09-23 00:35:32.925 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:35:46.362 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - -
+2023-09-23 00:35:46.438 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:35:46.450 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:35:56.379 -04:00 [INF] Executed DbCommand (50ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:37:15.218 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-23 00:37:15.420 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-23 00:37:15.420 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-23 00:37:15.421 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-23 00:37:15.421 -04:00 [INF] Hosting environment: Development
+2023-09-23 00:37:15.421 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-23 00:37:15.719 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-23 00:37:15.745 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-23 00:37:15.806 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-23 00:37:15.810 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 91.9502ms
+2023-09-23 00:37:19.587 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-23 00:37:24.449 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------009639470116966252395922 2816210
+2023-09-23 00:37:24.498 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------009639470116966252395922 2816210 - 404 0 - 49.1132ms
+2023-09-23 00:37:24.500 -04:00 [INF] Connection id "0HMTRTR1JTNON", Request id "0HMTRTR1JTNON:00000001": the application completed without reading the entire request body.
+2023-09-23 00:37:37.863 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------613230747149110982808386 2816210
+2023-09-23 00:37:37.871 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------613230747149110982808386 2816210 - 404 0 - 7.5917ms
+2023-09-23 00:37:37.871 -04:00 [INF] Connection id "0HMTRTR1JTNOP", Request id "0HMTRTR1JTNOP:00000001": the application completed without reading the entire request body.
+2023-09-23 00:37:54.329 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------629962040022636768019788 2816210
+2023-09-23 00:37:54.331 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------629962040022636768019788 2816210 - 404 0 - 1.8861ms
+2023-09-23 00:37:54.331 -04:00 [INF] Connection id "0HMTRTR1JTNOR", Request id "0HMTRTR1JTNOR:00000001": the application completed without reading the entire request body.
+2023-09-23 00:38:01.950 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------550867407173961400581814 2816210
+2023-09-23 00:38:01.951 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------550867407173961400581814 2816210 - 404 0 - 0.5758ms
+2023-09-23 00:38:01.951 -04:00 [INF] Connection id "0HMTRTR1JTNOT", Request id "0HMTRTR1JTNOT:00000001": the application completed without reading the entire request body.
+2023-09-23 00:38:17.836 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------905320449791936265070544 2816210
+2023-09-23 00:38:17.836 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/images multipart/form-data;+boundary=--------------------------905320449791936265070544 2816210 - 404 0 - 0.3550ms
+2023-09-23 00:38:17.836 -04:00 [INF] Connection id "0HMTRTR1JTNOV", Request id "0HMTRTR1JTNOV:00000001": the application completed without reading the entire request body.
+2023-09-23 00:38:39.287 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/images/david/profile-photo multipart/form-data;+boundary=--------------------------759803507834579738360012 2816210
+2023-09-23 00:38:39.297 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.UploadProfilePic (Twitter-Clone)'
+2023-09-23 00:38:39.325 -04:00 [INF] Route matched with {action = "UploadProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadProfilePic(System.String, Microsoft.AspNetCore.Http.IFormFile) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:38:46.214 -04:00 [INF] Executed DbCommand (39ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:38:46.347 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "ProfileImagePath" = @p0
+WHERE "Id" = @p1;
+2023-09-23 00:38:46.358 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-23 00:38:46.375 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.UploadProfilePic (Twitter-Clone) in 7047.7207ms
+2023-09-23 00:38:46.376 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.UploadProfilePic (Twitter-Clone)'
+2023-09-23 00:38:46.389 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/images/david/profile-photo multipart/form-data;+boundary=--------------------------759803507834579738360012 2816210 - 200 - application/json;+charset=utf-8 7101.4711ms
+2023-09-23 00:38:50.279 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - -
+2023-09-23 00:38:50.279 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:38:50.294 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:38:50.336 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:38:50.869 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-23 00:38:50.900 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 605.0107ms
+2023-09-23 00:38:50.900 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:38:50.900 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - - - 200 915266 image/webp 621.7790ms
+2023-09-23 00:52:13.952 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - -
+2023-09-23 00:52:13.953 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:52:13.954 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-23 00:52:14.163 -04:00 [INF] Executed DbCommand (20ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-23 00:52:14.835 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-23 00:52:14.840 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 885.8618ms
+2023-09-23 00:52:14.840 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-23 00:52:14.840 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/images/david/profile-photo - - - 200 915266 image/webp 887.8543ms
