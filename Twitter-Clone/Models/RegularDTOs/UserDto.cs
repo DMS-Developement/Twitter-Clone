@@ -8,6 +8,6 @@ public class UserDto
     public string? ProfileImagePath { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime LastLogin { get; set; }
-    public ICollection<UserFollow>? Followers { get; set; }
-    public ICollection<UserFollow>? Following { get; set; }
+    public ICollection<UserFollowDto>? Followers { get; set; }
+    public ICollection<UserFollowDto>? Following { get; set; }
 }

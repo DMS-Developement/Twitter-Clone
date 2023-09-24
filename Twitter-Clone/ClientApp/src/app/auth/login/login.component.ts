@@ -5,7 +5,7 @@ import {LoginRegisterModalFlagService} from "../../login-register-modal-flag.ser
 import {catchError, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {CurrentuserService} from 'src/app/currentuser.service';
+import {CurrentUserService} from 'src/app/currentUser.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   showLoginForm: boolean = false
 
-  constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService, private http: HttpClient, private router: Router, private currentUserService: CurrentuserService) {
+  constructor(private formBuilder: FormBuilder, private loginFlag: LoginRegisterModalFlagService, private http: HttpClient, private router: Router, private currentUserService: CurrentUserService) {
   }
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       user.password = this.loginForm.get('password')?.value;
     }
 
-    this.http.post('https://localhost:7282/api/Auth/login', user).pipe(
+    this.http.post('https://localhost:7282/api/Auth/login', user, {withCredentials: true}).pipe(
         tap(response => {
           console.table(response);
           this.closeLoginForm();

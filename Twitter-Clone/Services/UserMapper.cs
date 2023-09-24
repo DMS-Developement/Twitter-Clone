@@ -1,3 +1,4 @@
+using Twitter_Clone.Data;
 using Twitter_Clone.Models;
 using Twitter_Clone.Models.RegularDTOs;
 
@@ -6,10 +7,12 @@ namespace Twitter_Clone.Services;
 public class UserMapper
 {
     private readonly ILogger<UserMapper> _logger;
+    private readonly TwitterCloneDb _context;
 
-    public UserMapper(ILogger<UserMapper> logger)
+    public UserMapper(ILogger<UserMapper> logger, TwitterCloneDb context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public UserDto MapUserToDto(User user)
@@ -24,8 +27,8 @@ public class UserMapper
                 ProfileImagePath = user.ProfileImagePath,
                 CreatedAt = user.CreatedAt,
                 LastLogin = user.LastLogin,
-                Followers = user.Followers,
-                Following = user.Following
+                Following = user.Following?.Select(follow => new UserFollowDto { FollowerId = follow.FollowerId, FollowingId = follow.FollowingId }).ToList(),
+                Followers = user.Followers?.Select(follow => new UserFollowDto { FollowerId = follow.FollowerId, FollowingId = follow.FollowingId }).ToList()
             };
         }
         catch (InvalidOperationException e)

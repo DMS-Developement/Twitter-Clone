@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Twitter_Clone.Interfaces;
-using Twitter_Clone.Models;
+using Twitter_Clone.Models.RegularDTOs;
 
 namespace Twitter_Clone.Controllers;
 
@@ -20,7 +20,7 @@ public class TweetsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateTweet([FromBody] Tweet tweet)
+    public async Task<IActionResult> CreateTweet([FromBody] TweetDto tweet)
     {
         try
         {

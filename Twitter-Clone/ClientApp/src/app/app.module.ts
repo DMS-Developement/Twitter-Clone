@@ -11,6 +11,7 @@ import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {HomeComponent} from './home/home.component';
+import {ControlBarComponent} from '../control-bar/control-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HomeComponent} from './home/home.component';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    HomeComponent
+    HomeComponent,
+    ControlBarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

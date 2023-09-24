@@ -7,7 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 using Twitter_Clone.Data;
 using Twitter_Clone.Models;
 using Twitter_Clone.Models.AuthDTOs;
-using Twitter_Clone.Models.RegularDTOs;
 using Twitter_Clone.Services;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
@@ -19,11 +18,13 @@ public class AuthController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly TwitterCloneDb _dbContext;
+    private readonly UserMapper _userMapper;
 
-    public AuthController(IConfiguration configuration, TwitterCloneDb dbContext)
+    public AuthController(IConfiguration configuration, TwitterCloneDb dbContext, UserMapper userMapper)
     {
         _configuration = configuration;
         _dbContext = dbContext;
+        _userMapper = userMapper;
     }
 
     [HttpPost("register")]
@@ -62,17 +63,7 @@ public class AuthController : ControllerBase
 
         if (user == null || !PasswordHasher.VerifyPassword(userLogin.Password, user.PasswordHash)) return BadRequest("Invalid username or password");
 
-        var userResponse = new UserDto
-        {
-            Id = user.Id,
-            Username = user.Username,
-            Email = user.Email,
-            ProfileImagePath = user.ProfileImagePath,
-            CreatedAt = user.CreatedAt,
-            LastLogin = user.LastLogin,
-            Followers = user.Followers,
-            Following = user.Following
-        };
+        var userResponse = _userMapper.MapUserToDto(user);
 
         // Update LastLogin
         user.LastLogin = DateTime.UtcNow;
@@ -104,7 +95,8 @@ public class AuthController : ControllerBase
         {
             Expires = tokenExpiryTime,
             HttpOnly = true,
-            Secure = true
+            Secure = true,
+            SameSite = SameSiteMode.None
         };
 
         Response.Cookies.Append("jwt_cookie", jwt, cookieOptions);

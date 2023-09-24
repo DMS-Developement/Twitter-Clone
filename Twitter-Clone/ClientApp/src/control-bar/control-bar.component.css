@@ -1,0 +1,11 @@
+.control-bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    height: 2em;
+    width: 2em;
+    margin-bottom: 2em;
+    fill: lightgray;
+}

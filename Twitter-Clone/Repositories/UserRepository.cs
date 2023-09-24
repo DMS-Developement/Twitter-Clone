@@ -42,7 +42,7 @@ public class UserRepository : IUserRepository
     {
         try
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(u => u.Following).SingleOrDefaultAsync(u => u.Id == id);
 
             if (user == null) return null;
 

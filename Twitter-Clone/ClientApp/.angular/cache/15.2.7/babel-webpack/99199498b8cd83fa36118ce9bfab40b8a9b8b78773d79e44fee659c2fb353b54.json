@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nlet NavMenuComponent = class NavMenuComponent {\n  constructor(imagesService, currentUserService) {\n    this.imagesService = imagesService;\n    this.currentUserService = currentUserService;\n    this.isExpanded = false;\n  }\n  ngOnInit() {}\n  collapse() {\n    this.isExpanded = false;\n  }\n  toggle() {\n    this.isExpanded = !this.isExpanded;\n  }\n};\nNavMenuComponent = __decorate([Component({\n  selector: 'app-nav-menu',\n  templateUrl: './nav-menu.component.html',\n  styleUrls: ['./nav-menu.component.css']\n})], NavMenuComponent);\nexport { NavMenuComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAQxC,IAAMC,gBAAgB,GAAtB,MAAMA,gBAAgB;EAEzBC,YAAoBC,aAA4B,EAAUC,kBAAsC;IAA5E,kBAAa,GAAbD,aAAa;IAAyB,uBAAkB,GAAlBC,kBAAkB;IAO9E,eAAU,GAAG,KAAK;EANhB;EAEAC,QAAQ,IAER;EAIFC,QAAQ;IACN,IAAI,CAACC,UAAU,GAAG,KAAK;EACzB;EAEAC,MAAM;IACJ,IAAI,CAACD,UAAU,GAAG,CAAC,IAAI,CAACA,UAAU;EACpC;CACD;AAlBYN,gBAAgB,eAL5BD,SAAS,CAAC;EACTS,QAAQ,EAAE,cAAc;EACxBC,WAAW,EAAE,2BAA2B;EACxCC,SAAS,EAAE,CAAC,0BAA0B;CACvC,CAAC,GACWV,gBAAgB,CAkB5B;SAlBYA,gBAAgB",
+    "names": [
+      "Component",
+      "NavMenuComponent",
+      "constructor",
+      "imagesService",
+      "currentUserService",
+      "ngOnInit",
+      "collapse",
+      "isExpanded",
+      "toggle",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/nav-menu/nav-menu.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {ImagesService} from \"../services/images.service\";\n\n@Component({\n  selector: 'app-nav-menu',\n  templateUrl: './nav-menu.component.html',\n  styleUrls: ['./nav-menu.component.css']\n})\nexport class NavMenuComponent implements OnInit {\n\n    constructor(private imagesService: ImagesService, private currentUserService: CurrentUserService) {\n    }\n\n    ngOnInit() {\n\n    }\n\n  isExpanded = false;\n\n  collapse() {\n    this.isExpanded = false;\n  }\n\n  toggle() {\n    this.isExpanded = !this.isExpanded;\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

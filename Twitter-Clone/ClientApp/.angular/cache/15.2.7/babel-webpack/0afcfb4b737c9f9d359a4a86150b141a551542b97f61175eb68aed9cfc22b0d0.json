@@ -1,0 +1,36 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nexport class ProfilePhotoSaverService {\n  constructor() {}\n  saveProfilePhotoToSessionStorage(key, value) {\n    let reader = new FileReader();\n    reader.addEventListener(\"load\", () => {\n      sessionStorage.setItem(key, reader.result);\n    }, false);\n    if (value) {\n      reader.readAsDataURL(value);\n    }\n  }\n  getProfilePhotoFromSessionStorage(key) {\n    return sessionStorage.getItem(key);\n  }\n}\nProfilePhotoSaverService.ɵfac = function ProfilePhotoSaverService_Factory(t) {\n  return new (t || ProfilePhotoSaverService)();\n};\nProfilePhotoSaverService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: ProfilePhotoSaverService,\n  factory: ProfilePhotoSaverService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";AAKA,OAAM,MAAOA,wBAAwB;EAEnCC,eAAgB;EAEhBC,gCAAgC,CAACC,GAAW,EAAEC,KAAW;IACvD,IAAIC,MAAM,GAAG,IAAIC,UAAU,EAAE;IAC7BD,MAAM,CAACE,gBAAgB,CAAC,MAAM,EAAE,MAAK;MACnCC,cAAc,CAACC,OAAO,CAACN,GAAG,EAAEE,MAAM,CAACK,MAAgB,CAAC;IACtD,CAAC,EAAE,KAAK,CAAC;IAET,IAAIN,KAAK,EAAE;MACTC,MAAM,CAACM,aAAa,CAACP,KAAK,CAAC;;EAE/B;EAEAQ,iCAAiC,CAACT,GAAW;IAC3C,OAAOK,cAAc,CAACK,OAAO,CAACV,GAAG,CAAW;EAC9C;;AAjBWH,wBAAwB;mBAAxBA,wBAAwB;AAAA;AAAxBA,wBAAwB;SAAxBA,wBAAwB;EAAAc,SAAxBd,wBAAwB;EAAAe,YAFvB;AAAM",
+    "names": [
+      "ProfilePhotoSaverService",
+      "constructor",
+      "saveProfilePhotoToSessionStorage",
+      "key",
+      "value",
+      "reader",
+      "FileReader",
+      "addEventListener",
+      "sessionStorage",
+      "setItem",
+      "result",
+      "readAsDataURL",
+      "getProfilePhotoFromSessionStorage",
+      "getItem",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/services/profile-photo-saver.service.ts"
+    ],
+    "sourcesContent": [
+      "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ProfilePhotoSaverService {\n\n  constructor() { }\n\n  saveProfilePhotoToSessionStorage(key: string, value: Blob): void {\n    let reader = new FileReader();\n    reader.addEventListener(\"load\", () => {\n      sessionStorage.setItem(key, reader.result as string);\n    }, false);\n\n    if (value) {\n      reader.readAsDataURL(value);\n    }\n  }\n\n  getProfilePhotoFromSessionStorage(key: string): string {\n    return sessionStorage.getItem(key) as string;\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

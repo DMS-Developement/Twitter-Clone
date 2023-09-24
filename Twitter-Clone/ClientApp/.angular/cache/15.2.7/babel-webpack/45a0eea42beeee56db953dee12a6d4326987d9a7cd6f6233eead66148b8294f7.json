@@ -1,0 +1,37 @@
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nimport { NavigationEnd } from \"@angular/router\";\nimport { filter } from \"rxjs/operators\";\nlet ControlBarComponent = class ControlBarComponent {\n  constructor(router) {\n    this.router = router;\n    this.isUrlHome = false;\n    this.isUrlSearch = false;\n  }\n  ngOnInit() {\n    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {\n      this.isUrlHome = event.url === '/home';\n      this.isUrlSearch = event.url === '/search';\n    });\n  }\n};\nControlBarComponent = __decorate([Component({\n  selector: 'app-control-bar',\n  templateUrl: './control-bar.component.html',\n  styleUrls: ['./control-bar.component.css']\n})], ControlBarComponent);\nexport { ControlBarComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAC/C,SAAQC,aAAa,QAAe,iBAAiB;AACrD,SAAQC,MAAM,QAAO,gBAAgB;AAQ9B,IAAMC,mBAAmB,GAAzB,MAAMA,mBAAmB;EAC5BC,YAAoBC,MAAc;IAAd,WAAM,GAANA,MAAM;IAGnB,cAAS,GAAY,KAAK;IAC1B,gBAAW,GAAY,KAAK;EAHnC;EAKAC,QAAQ;IACJ,IAAI,CAACD,MAAM,CAACE,MAAM,CAACC,IAAI,CACnBN,MAAM,CAAEO,KAAK,IAA6BA,KAAK,YAAYR,aAAa,CAAC,CAC5E,CAACS,SAAS,CAAED,KAAoB,IAAI;MACjC,IAAI,CAACE,SAAS,GAAGF,KAAK,CAACG,GAAG,KAAK,OAAO;MACtC,IAAI,CAACC,WAAW,GAAGJ,KAAK,CAACG,GAAG,KAAK,SAAS;IAC9C,CAAC,CAAC;EACN;CACH;AAfYT,mBAAmB,eAL/BH,SAAS,CAAC;EACPc,QAAQ,EAAE,iBAAiB;EAC3BC,WAAW,EAAE,8BAA8B;EAC3CC,SAAS,EAAE,CAAC,6BAA6B;CAC5C,CAAC,GACWb,mBAAmB,CAe/B;SAfYA,mBAAmB",
+    "names": [
+      "Component",
+      "NavigationEnd",
+      "filter",
+      "ControlBarComponent",
+      "constructor",
+      "router",
+      "ngOnInit",
+      "events",
+      "pipe",
+      "event",
+      "subscribe",
+      "isUrlHome",
+      "url",
+      "isUrlSearch",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/control-bar/control-bar.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {NavigationEnd, Router} from \"@angular/router\";\nimport {filter} from \"rxjs/operators\";\n\n\n@Component({\n    selector: 'app-control-bar',\n    templateUrl: './control-bar.component.html',\n    styleUrls: ['./control-bar.component.css']\n})\nexport class ControlBarComponent implements OnInit {\n    constructor(private router: Router) {\n    }\n\n    public isUrlHome: boolean = false;\n    public isUrlSearch: boolean = false;\n\n    ngOnInit() {\n        this.router.events.pipe(\n            filter((event): event is NavigationEnd => event instanceof NavigationEnd)\n        ).subscribe((event: NavigationEnd) => {\n            this.isUrlHome = event.url === '/home';\n            this.isUrlSearch = event.url === '/search';\n        });\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

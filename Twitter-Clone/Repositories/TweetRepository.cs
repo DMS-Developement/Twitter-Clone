@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Twitter_Clone.Data;
 using Twitter_Clone.Interfaces;
-using Twitter_Clone.Models;
 using Twitter_Clone.Models.RegularDTOs;
 using Twitter_Clone.Services;
 
@@ -20,7 +19,7 @@ public class TweetRepository : ITweetRepository
         _logger = logger;
     }
 
-    public async Task<TweetDto> CreateTweet(Tweet tweet)
+    public async Task<TweetDto> CreateTweet(TweetDto tweet)
     {
         try
         {
@@ -31,11 +30,12 @@ public class TweetRepository : ITweetRepository
                 throw new ArgumentException("User does not exist");
             }
 
-            tweet.User = user;
-            _context.Tweets.Add(tweet);
+            var newTweet = _tweetMapper.MapTweetDtoToTweet(tweet);
+
+            await _context.Tweets.AddAsync(newTweet);
             await _context.SaveChangesAsync();
 
-            return _tweetMapper.MapTweetToTweetDto(tweet);
+            return _tweetMapper.MapTweetToTweetDto(newTweet);
         }
         catch (DbUpdateException e)
         {
@@ -106,6 +106,23 @@ public class TweetRepository : ITweetRepository
             _logger.LogError($"Generic Error: {e.Message}");
             throw;
         }
+    }
+
+    public async Task<List<TweetDto>> GetTweetsByFollowingUsers(int userId)
+    {
+        var tweetDtos = new List<TweetDto>();
+
+        var following = await _context.UserFollows.Where(uf => uf.FollowerId == userId).Select(uf => uf.FollowingId).ToListAsync();
+
+        var tweets = await _context.Tweets.Where(x => following.Contains(x.UserId)).OrderByDescending(x => x.CreatedAt).ToListAsync();
+
+        tweets.ForEach(tweet =>
+        {
+            var tweetDto = _tweetMapper.MapTweetToTweetDto(tweet);
+            tweetDtos.Add(tweetDto);
+        });
+
+        return tweetDtos;
     }
 
     public async Task DeleteTweet(int id)

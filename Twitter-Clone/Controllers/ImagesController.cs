@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using FileOptions = Supabase.Storage.FileOptions;
 
 namespace Twitter_Clone.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class ImagesController : ControllerBase

@@ -1,0 +1,28 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/router\";\nexport class TurnOnOrOffActiveIconService {\n  constructor(router) {\n    this.router = router;\n  }\n  isUrlHome() {\n    return this.router.url === '/home';\n  }\n  isUrlSearch() {\n    return this.router.url === '/search';\n  }\n}\nTurnOnOrOffActiveIconService.ɵfac = function TurnOnOrOffActiveIconService_Factory(t) {\n  return new (t || TurnOnOrOffActiveIconService)(i0.ɵɵinject(i1.Router));\n};\nTurnOnOrOffActiveIconService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: TurnOnOrOffActiveIconService,\n  factory: TurnOnOrOffActiveIconService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";;AAMA,OAAM,MAAOA,4BAA4B;EAEvCC,YAAoBC,MAAc;IAAd,WAAM,GAANA,MAAM;EAAY;EAEtCC,SAAS;IACP,OAAO,IAAI,CAACD,MAAM,CAACE,GAAG,KAAK,OAAO;EACpC;EAEAC,WAAW;IACT,OAAO,IAAI,CAACH,MAAM,CAACE,GAAG,KAAK,SAAS;EACtC;;AAVWJ,4BAA4B;mBAA5BA,4BAA4B;AAAA;AAA5BA,4BAA4B;SAA5BA,4BAA4B;EAAAM,SAA5BN,4BAA4B;EAAAO,YAF3B;AAAM",
+    "names": [
+      "TurnOnOrOffActiveIconService",
+      "constructor",
+      "router",
+      "isUrlHome",
+      "url",
+      "isUrlSearch",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/services/turn-on-or-off-active-icon.service.ts"
+    ],
+    "sourcesContent": [
+      "import { Injectable } from '@angular/core';\nimport { Router } from \"@angular/router\";\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class TurnOnOrOffActiveIconService {\n\n  constructor(private router: Router) { }\n\n  isUrlHome(): boolean {\n    return this.router.url === '/home';\n  }\n\n  isUrlSearch(): boolean {\n    return this.router.url === '/search';\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

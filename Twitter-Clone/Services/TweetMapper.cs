@@ -1,3 +1,4 @@
+using Twitter_Clone.Data;
 using Twitter_Clone.Models;
 using Twitter_Clone.Models.RegularDTOs;
 
@@ -7,11 +8,13 @@ public class TweetMapper
 {
     private readonly UserMapper _userMapper;
     private readonly ILogger<TweetMapper> _logger;
+    private readonly TwitterCloneDb _context;
 
-    public TweetMapper(UserMapper userMapper, ILogger<TweetMapper> logger)
+    public TweetMapper(UserMapper userMapper, ILogger<TweetMapper> logger, TwitterCloneDb context)
     {
         _userMapper = userMapper;
         _logger = logger;
+        _context = context;
     }
 
     public TweetDto MapTweetToTweetDto(Tweet tweet)
@@ -24,7 +27,26 @@ public class TweetMapper
                 Content = tweet.Content,
                 UserId = tweet.UserId,
                 CreatedAt = tweet.CreatedAt,
-                User = _userMapper.MapUserToDto(tweet.User)
+            };
+        }
+        catch (InvalidOperationException e)
+        {
+            _logger.LogError($"InvalidOperationException: {e.Message}");
+            throw;
+        }
+    }
+
+    public Tweet MapTweetDtoToTweet(TweetDto tweetDto)
+    {
+        try
+        {
+            return new Tweet
+            {
+                Id = tweetDto.Id,
+                Content = tweetDto.Content,
+                UserId = tweetDto.UserId,
+                CreatedAt = tweetDto.CreatedAt,
+                User = _context.Users.Find(tweetDto.UserId)
             };
         }
         catch (InvalidOperationException e)

@@ -1,0 +1,6 @@
+<div class="control-bar">
+	<img *ngIf="!isUrlHome" alt="home icon" src="./assets/icons/control-bar/home-icon-inactive.svg">
+	<img *ngIf="isUrlHome" alt="home icon" src="./assets/icons/control-bar/home-icon-active.svg">
+	<img *ngIf="!isUrlSearch" alt="search icon" src="./assets/icons/control-bar/search-icon-inactive.svg">
+	<img *ngIf="isUrlSearch" alt="" src="./assets/icons/control-bar/search-icon-active.svg">
+</div>
