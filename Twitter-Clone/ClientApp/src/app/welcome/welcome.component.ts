@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginRegisterModalFlagService} from "../login-register-modal-flag.service";
+import {LoginRegisterModalFlagService} from "../services/login-register-modal-flag.service";
 
 @Component({
     selector: 'app-welcome',

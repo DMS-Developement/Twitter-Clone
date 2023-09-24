@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ImagesService} from "../services/images.service";
-import {CurrentUserService} from "../currentUser.service";
+import {CurrentUserService} from "../services/currentUser.service";
 import {ProfilePhotoSaverService} from "../services/profile-photo-saver.service";
 
 @Component({

@@ -1784,3 +1784,90 @@ LIMIT 2
 2023-09-24 02:12:09.419 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 143.1407ms
 2023-09-24 02:12:09.419 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
 2023-09-24 02:12:09.419 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 200 915266 image/webp 144.6724ms
+2023-09-24 02:51:11.742 -04:00 [INF] User profile is available. Using '/Users/davidshimenko/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-09-24 02:51:12.000 -04:00 [INF] Now listening on: https://localhost:7282
+2023-09-24 02:51:12.000 -04:00 [INF] Now listening on: http://localhost:5247
+2023-09-24 02:51:12.000 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-24 02:51:12.000 -04:00 [INF] Hosting environment: Development
+2023-09-24 02:51:12.001 -04:00 [INF] Content root path: /Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone
+2023-09-24 16:51:17.451 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-24 16:51:17.489 -04:00 [INF] No SPA development server running at https://localhost:44438 found.
+2023-09-24 16:51:17.554 -04:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-24 16:51:17.558 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 200 - text/html 108.4683ms
+2023-09-24 16:51:17.932 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/favicon.ico - -
+2023-09-24 16:51:18.051 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/favicon.ico - - - 404 0 - 118.5826ms
+2023-09-24 16:51:20.935 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/ - -
+2023-09-24 16:51:21.820 -04:00 [INF] SPA proxy is ready. Redirecting to https://localhost:44438.
+2023-09-24 16:51:21.820 -04:00 [INF] SPA development server running at 'https://localhost:44438'
+2023-09-24 16:51:21.821 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/ - - - 302 0 - 886.0127ms
+2023-09-24 16:51:32.475 -04:00 [INF] Request starting HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - -
+2023-09-24 16:51:32.482 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:51:32.484 -04:00 [INF] Request finished HTTP/1.1 OPTIONS https://localhost:7282/api/Auth/login - - - 204 - - 8.2463ms
+2023-09-24 16:51:32.489 -04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43
+2023-09-24 16:51:32.490 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:51:32.500 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-24 16:51:32.522 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Twitter_Clone.Models.AuthDTOs.LoginDto) on controller Twitter_Clone.Controllers.AuthController (Twitter-Clone).
+2023-09-24 16:51:34.259 -04:00 [INF] Executed DbCommand (108ms) [Parameters=[@__userLogin_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__userLogin_Username_0
+LIMIT 1
+2023-09-24 16:51:34.654 -04:00 [INF] Executed DbCommand (57ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "CreatedAt" = @p0, "Email" = @p1, "LastLogin" = @p2, "PasswordHash" = @p3, "ProfileImagePath" = @p4, "Username" = @p5
+WHERE "Id" = @p6;
+2023-09-24 16:51:34.670 -04:00 [INF] Executing OkObjectResult, writing value of type 'Twitter_Clone.Models.RegularDTOs.UserDto'.
+2023-09-24 16:51:34.693 -04:00 [INF] Executed action Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone) in 2167.4512ms
+2023-09-24 16:51:34.694 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.AuthController.Login (Twitter-Clone)'
+2023-09-24 16:51:34.706 -04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7282/api/Auth/login application/json 43 - 200 - application/json;+charset=utf-8 2216.9894ms
+2023-09-24 16:51:34.724 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - -
+2023-09-24 16:51:34.725 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:51:34.729 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:51:34.731 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-24 16:51:34.807 -04:00 [INF] Executed DbCommand (56ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-24 16:51:36.657 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-24 16:51:36.771 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 2040.5624ms
+2023-09-24 16:51:36.772 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:51:36.772 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 200 915266 image/webp 2047.5089ms
+2023-09-24 16:52:33.306 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - -
+2023-09-24 16:52:33.306 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:52:33.308 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:52:33.308 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-24 16:52:33.395 -04:00 [INF] Executed DbCommand (59ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-24 16:52:33.628 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-24 16:52:33.640 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 332.3671ms
+2023-09-24 16:52:33.641 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:52:33.641 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 200 915266 image/webp 334.7150ms
+2023-09-24 16:56:01.630 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - -
+2023-09-24 16:56:01.630 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:56:01.632 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:56:01.633 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-24 16:56:01.734 -04:00 [INF] Executed DbCommand (101ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-24 16:56:03.130 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-24 16:56:03.138 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 1505.5052ms
+2023-09-24 16:56:03.138 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:56:03.138 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 200 915266 image/webp 1508.7004ms
+2023-09-24 16:56:22.995 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - -
+2023-09-24 16:56:22.995 -04:00 [INF] CORS policy execution successful.
+2023-09-24 16:56:22.995 -04:00 [INF] Executing endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:56:22.995 -04:00 [INF] Route matched with {action = "RetrieveProfilePic", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RetrieveProfilePic(System.String) on controller Twitter_Clone.Controllers.ImagesController (Twitter-Clone).
+2023-09-24 16:56:23.054 -04:00 [INF] Executed DbCommand (57ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."LastLogin", u."PasswordHash", u."ProfileImagePath", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__username_0
+LIMIT 2
+2023-09-24 16:56:23.315 -04:00 [INF] Executing FileContentResult, sending file with download name 'a4a1ee34-6021-4f67-af8b-361fb55a70e3.webp' ...
+2023-09-24 16:56:23.317 -04:00 [INF] Executed action Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone) in 321.6195ms
+2023-09-24 16:56:23.317 -04:00 [INF] Executed endpoint 'Twitter_Clone.Controllers.ImagesController.RetrieveProfilePic (Twitter-Clone)'
+2023-09-24 16:56:23.317 -04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7282/api/Images/david/profile-photo - - - 200 915266 image/webp 322.6126ms

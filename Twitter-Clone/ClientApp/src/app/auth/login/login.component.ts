@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LoginRegisterModalFlagService} from "../../login-register-modal-flag.service";
+import {LoginRegisterModalFlagService} from "../../services/login-register-modal-flag.service";
 import {catchError, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {CurrentUserService} from 'src/app/currentUser.service';
+import {CurrentUserService} from "../../services/currentUser.service";
 
 @Component({
   selector: 'app-login',

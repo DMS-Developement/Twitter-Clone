@@ -1,0 +1,44 @@
+{
+  "ast": null,
+  "code": "import { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { RouterModule } from '@angular/router';\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { AppComponent } from './app.component';\nimport { NavMenuComponent } from './nav-menu/nav-menu.component';\nimport { LoginComponent } from './auth/login/login.component';\nimport { RegisterComponent } from './auth/register/register.component';\nimport { WelcomeComponent } from './welcome/welcome.component';\nimport { HomeComponent } from './home/home.component';\nimport { ControlBarComponent } from '../control-bar/control-bar.component';\nimport { TweetDisplayComponent } from './tweet-display/tweet-display.component';\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/platform-browser\";\nimport * as i2 from \"@angular/router\";\nexport class AppModule {}\nAppModule.ɵfac = function AppModule_Factory(t) {\n  return new (t || AppModule)();\n};\nAppModule.ɵmod = /*@__PURE__*/i0.ɵɵdefineNgModule({\n  type: AppModule,\n  bootstrap: [AppComponent]\n});\nAppModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({\n  imports: [BrowserModule.withServerTransition({\n    appId: 'ng-cli-universal'\n  }), ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule, FormsModule, RouterModule.forRoot([{\n    path: '',\n    component: WelcomeComponent,\n    pathMatch: 'full'\n  }, {\n    path: 'home',\n    component: HomeComponent\n  }])]\n});\n(function () {\n  (typeof ngJitMode === \"undefined\" || ngJitMode) && i0.ɵɵsetNgModuleScope(AppModule, {\n    declarations: [AppComponent, NavMenuComponent, LoginComponent, RegisterComponent, WelcomeComponent, HomeComponent, ControlBarComponent, TweetDisplayComponent],\n    imports: [i1.BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule, FormsModule, i2.RouterModule]\n  });\n})();",
+  "map": {
+    "version": 3,
+    "mappings": "AAAA,SAAQA,aAAa,QAAO,2BAA2B;AAEvD,SAAQC,WAAW,EAAEC,mBAAmB,QAAO,gBAAgB;AAC/D,SAAQC,gBAAgB,QAAO,sBAAsB;AACrD,SAAQC,YAAY,QAAO,iBAAiB;AAC5C,SAAQC,uBAAuB,QAAO,sCAAsC;AAE5E,SAAQC,YAAY,QAAO,iBAAiB;AAC5C,SAAQC,gBAAgB,QAAO,+BAA+B;AAC9D,SAAQC,cAAc,QAAO,8BAA8B;AAC3D,SAAQC,iBAAiB,QAAO,oCAAoC;AACpE,SAAQC,gBAAgB,QAAO,6BAA6B;AAC5D,SAAQC,aAAa,QAAO,uBAAuB;AACnD,SAAQC,mBAAmB,QAAO,sCAAsC;AACxE,SAASC,qBAAqB,QAAQ,yCAAyC;;;;AA2B/E,OAAM,MAAOC,SAAS;AAATA,SAAS;mBAATA,SAAS;AAAA;AAATA,SAAS;QAATA,SAAS;EAAAC,YAFRT,YAAY;AAAA;AAEbQ,SAAS;YAblBd,aAAa,CAACgB,oBAAoB,CAAC;IAAEC,KAAK,EAAE;EAAkB,CAAE,CAAC,EACjEf,mBAAmB,EACnBG,uBAAuB,EACvBF,gBAAgB,EAChBF,WAAW,EACXG,YAAY,CAACc,OAAO,CAAC,CACnB;IAACC,IAAI,EAAE,EAAE;IAAEC,SAAS,EAAEV,gBAAgB;IAAEW,SAAS,EAAE;EAAM,CAAC,EAC1D;IAACF,IAAI,EAAE,MAAM;IAAEC,SAAS,EAAET;EAAa,CAAC,CACzC,CAAC;AAAA;;2EAKOG,SAAS;IAAAQ,eAvBlBhB,YAAY,EACZC,gBAAgB,EAChBC,cAAc,EACdC,iBAAiB,EACjBC,gBAAgB,EAChBC,aAAa,EACbC,mBAAmB,EACnBC,qBAAqB;IAAAU,4BAIrBrB,mBAAmB,EACnBG,uBAAuB,EACvBF,gBAAgB,EAChBF,WAAW;EAAA;AAAA",
+    "names": [
+      "BrowserModule",
+      "FormsModule",
+      "ReactiveFormsModule",
+      "HttpClientModule",
+      "RouterModule",
+      "BrowserAnimationsModule",
+      "AppComponent",
+      "NavMenuComponent",
+      "LoginComponent",
+      "RegisterComponent",
+      "WelcomeComponent",
+      "HomeComponent",
+      "ControlBarComponent",
+      "TweetDisplayComponent",
+      "AppModule",
+      "bootstrap",
+      "withServerTransition",
+      "appId",
+      "forRoot",
+      "path",
+      "component",
+      "pathMatch",
+      "declarations",
+      "imports"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/app.module.ts"
+    ],
+    "sourcesContent": [
+      "import {BrowserModule} from '@angular/platform-browser';\nimport {NgModule} from '@angular/core';\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\nimport {HttpClientModule} from '@angular/common/http';\nimport {RouterModule} from '@angular/router';\nimport {BrowserAnimationsModule} from \"@angular/platform-browser/animations\";\n\nimport {AppComponent} from './app.component';\nimport {NavMenuComponent} from './nav-menu/nav-menu.component';\nimport {LoginComponent} from './auth/login/login.component';\nimport {RegisterComponent} from './auth/register/register.component';\nimport {WelcomeComponent} from './welcome/welcome.component';\nimport {HomeComponent} from './home/home.component';\nimport {ControlBarComponent} from '../control-bar/control-bar.component';\nimport { TweetDisplayComponent } from './tweet-display/tweet-display.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    NavMenuComponent,\n    LoginComponent,\n    RegisterComponent,\n    WelcomeComponent,\n    HomeComponent,\n    ControlBarComponent,\n    TweetDisplayComponent\n  ],\n  imports: [\n    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    HttpClientModule,\n    FormsModule,\n    RouterModule.forRoot([\n      {path: '', component: WelcomeComponent, pathMatch: 'full'},\n      {path: 'home', component: HomeComponent}\n    ])\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

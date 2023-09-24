@@ -12,6 +12,7 @@ import {RegisterComponent} from './auth/register/register.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {HomeComponent} from './home/home.component';
 import {ControlBarComponent} from '../control-bar/control-bar.component';
+import {TweetDisplayComponent} from './tweet-display/tweet-display.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ControlBarComponent} from '../control-bar/control-bar.component';
     RegisterComponent,
     WelcomeComponent,
     HomeComponent,
-    ControlBarComponent
+    ControlBarComponent,
+    TweetDisplayComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
