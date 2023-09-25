@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nexport class ImagesService {\n  constructor(http) {\n    this.http = http;\n    this.API_BASE_URL = 'https://localhost:7282/api/Images';\n  }\n  getProfilePhoto(username) {\n    return this.http.get(`${this.API_BASE_URL}/${username}/profile-photo`, {\n      responseType: 'blob',\n      withCredentials: true\n    });\n  }\n  getProfilePhotoUrl(username) {}\n}\nImagesService.ɵfac = function ImagesService_Factory(t) {\n  return new (t || ImagesService)(i0.ɵɵinject(i1.HttpClient));\n};\nImagesService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: ImagesService,\n  factory: ImagesService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";;AAMA,OAAM,MAAOA,aAAa;EAGtBC,YAAoBC,IAAgB;IAAhB,SAAI,GAAJA,IAAI;IAFhB,iBAAY,GAAG,mCAAmC;EAG1D;EAEAC,eAAe,CAACC,QAAgB;IAC5B,OAAO,IAAI,CAACF,IAAI,CAACG,GAAG,CAAC,GAAG,IAAI,CAACC,YAAY,IAAIF,QAAQ,gBAAgB,EAAE;MAACG,YAAY,EAAE,MAAM;MAAEC,eAAe,EAAE;IAAI,CAAC,CAAC;EACzH;EAEAC,kBAAkB,CAACL,QAAgB,GAEnC;;AAZSJ,aAAa;mBAAbA,aAAa;AAAA;AAAbA,aAAa;SAAbA,aAAa;EAAAU,SAAbV,aAAa;EAAAW,YAFV;AAAM",
+    "names": [
+      "ImagesService",
+      "constructor",
+      "http",
+      "getProfilePhoto",
+      "username",
+      "get",
+      "API_BASE_URL",
+      "responseType",
+      "withCredentials",
+      "getProfilePhotoUrl",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/services/images.service.ts"
+    ],
+    "sourcesContent": [
+      "import {Injectable} from '@angular/core';\nimport {HttpClient} from \"@angular/common/http\";\n\n@Injectable({\n    providedIn: 'root'\n})\nexport class ImagesService {\n    private API_BASE_URL = 'https://localhost:7282/api/Images';\n\n    constructor(private http: HttpClient) {\n    }\n\n    getProfilePhoto(username: string) {\n        return this.http.get(`${this.API_BASE_URL}/${username}/profile-photo`, {responseType: 'blob', withCredentials: true});\n    }\n\n    getProfilePhotoUrl(username: string) {\n        \n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -85,6 +85,21 @@ public class TweetsController : ControllerBase
         }
     }
 
+    [HttpGet("user/{userId}/following/tweets")]
+    public async Task<IActionResult> GetTweetsByFollowingUsers(int userId)
+    {
+        try
+        {
+            var tweets = await _tweetRepository.GetTweetsByFollowingUsers(userId);
+            return Ok(tweets);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Something went wrong: {e}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Something went wrong" });
+        }
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTweet(int id)
     {

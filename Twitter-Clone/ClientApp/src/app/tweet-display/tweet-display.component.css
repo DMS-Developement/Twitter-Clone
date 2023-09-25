@@ -1,0 +1,33 @@
+.tweet-display {
+    display: flex;
+    border: 1px solid #E5E6E9;
+    padding-top: 1em;
+    min-width: 100%;
+}
+
+.profile-photo {
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-left: 1em;
+}
+
+.tweet-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 8em;
+    margin-left: 1em;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+}
+
+.created {
+    margin-left: .5em;
+}

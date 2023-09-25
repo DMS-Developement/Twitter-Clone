@@ -1,5 +1,6 @@
 <app-nav-menu></app-nav-menu>
 <div class="home">
+	<app-tweet-display *ngIf="following" [tweets]="tweets" class="tweets"></app-tweet-display>
 	<div>
 		<img alt="new tweet button" class="new-tweet" src="./assets/icons/Tweet/new-tweet.svg">
 	</div>

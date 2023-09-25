@@ -4,7 +4,7 @@
 	>
 		<div class="container">
 
-			<img [src]="getProfilePhoto()" alt="Profile Photo" class="pfp-thumbnail">
+			<img [src]="getProfilePhoto()" alt="profile photo" class="pfp-thumbnail" onerror="this.src='./assets/icons/default-profile-icon/default-profile.svg'">
 			<button
 					(click)="toggle()"
 					[attr.aria-expanded]="isExpanded"

@@ -14,6 +14,10 @@ app-control-bar {
     left: 0;
 }
 
+.home {
+    margin-top: 3.5em;
+}
+
 .new-tweet {
     z-index: 1;
     position: fixed;

@@ -13,6 +13,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {HomeComponent} from './home/home.component';
 import {ControlBarComponent} from '../control-bar/control-bar.component';
 import {TweetDisplayComponent} from './tweet-display/tweet-display.component';
+import {TimeAgoPipe} from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {TweetDisplayComponent} from './tweet-display/tweet-display.component';
     WelcomeComponent,
     HomeComponent,
     ControlBarComponent,
-    TweetDisplayComponent
+    TweetDisplayComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

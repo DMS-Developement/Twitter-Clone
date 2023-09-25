@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nexport class TimeAgoPipe {\n  transform(value, ...args) {\n    const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);\n    if (seconds < 29)\n      // less than 30 seconds ago will show as 'Just now'\n      return 'Just now';\n    const intervals = {\n      'year': 31536000,\n      'month': 2592000,\n      'day': 86400,\n      'hour': 3600,\n      'minute': 60,\n      'second': 1\n    };\n    let counter;\n    for (const i in intervals) {\n      counter = Math.floor(seconds / intervals[i]);\n      if (counter > 0) if (counter === 1) {\n        return counter + ' ' + i + ' ago'; // singular (1 year ago)\n      } else {\n        return counter + ' ' + i + 's ago'; // plural (2 years ago)\n      }\n    }\n  }\n}\n\nTimeAgoPipe.ɵfac = function TimeAgoPipe_Factory(t) {\n  return new (t || TimeAgoPipe)();\n};\nTimeAgoPipe.ɵpipe = /*@__PURE__*/i0.ɵɵdefinePipe({\n  name: \"timeAgo\",\n  type: TimeAgoPipe,\n  pure: true\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";AAKA,OAAM,MAAOA,WAAW;EAEtBC,SAAS,CAACC,KAAW,EAAE,GAAGC,IAAW;IACnC,MAAMC,OAAO,GAAGC,IAAI,CAACC,KAAK,CAAC,CAAC,CAAC,IAAIC,IAAI,EAAE,GAAG,CAAC,IAAIA,IAAI,CAACL,KAAK,CAAC,IAAI,IAAI,CAAC;IAEnE,IAAIE,OAAO,GAAG,EAAE;MAAE;MAChB,OAAO,UAAU;IAEnB,MAAMI,SAAS,GAAG;MAChB,MAAM,EAAE,QAAQ;MAChB,OAAO,EAAE,OAAO;MAChB,KAAK,EAAE,KAAK;MACZ,MAAM,EAAE,IAAI;MACZ,QAAQ,EAAE,EAAE;MACZ,QAAQ,EAAE;KACX;IAED,IAAIC,OAAO;IACX,KAAK,MAAMC,CAAC,IAAIF,SAAS,EAAE;MACzBC,OAAO,GAAGJ,IAAI,CAACC,KAAK,CAACF,OAAO,GAAGI,SAAS,CAACE,CAAC,CAAC,CAAC;MAE5C,IAAID,OAAO,GAAG,CAAC,EACb,IAAIA,OAAO,KAAK,CAAC,EAAE;QACjB,OAAOA,OAAO,GAAG,GAAG,GAAGC,CAAC,GAAG,MAAM,CAAC,CAAG;OACtC,MAAM;QACL,OAAOD,OAAO,GAAG,GAAG,GAAGC,CAAC,GAAG,OAAO,CAAC,CAAE;;;EAG7C;;;AA5BWV,WAAW;mBAAXA,WAAW;AAAA;AAAXA,WAAW;;QAAXA,WAAW;EAAAW;AAAA",
+    "names": [
+      "TimeAgoPipe",
+      "transform",
+      "value",
+      "args",
+      "seconds",
+      "Math",
+      "floor",
+      "Date",
+      "intervals",
+      "counter",
+      "i",
+      "pure"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/pipes/time-ago.pipe.ts"
+    ],
+    "sourcesContent": [
+      "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'timeAgo'\n})\nexport class TimeAgoPipe implements PipeTransform {\n\n  transform(value: Date, ...args: any[]): string {\n    const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);\n\n    if (seconds < 29) // less than 30 seconds ago will show as 'Just now'\n      return 'Just now';\n\n    const intervals = {\n      'year': 31536000,\n      'month': 2592000,\n      'day': 86400,\n      'hour': 3600,\n      'minute': 60,\n      'second': 1\n    };\n\n    let counter;\n    for (const i in intervals) {\n      counter = Math.floor(seconds / intervals[i]);\n\n      if (counter > 0)\n        if (counter === 1) {\n          return counter + ' ' + i + ' ago';   // singular (1 year ago)\n        } else {\n          return counter + ' ' + i + 's ago';  // plural (2 years ago)\n        }\n    }\n  }\n\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

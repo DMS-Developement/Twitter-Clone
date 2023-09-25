@@ -1,1 +1,28 @@
-<p>tweet-display works!</p>
+<div *ngFor="let tweet of tweets" class="tweet-display">
+	<div class="profile-photo-column">
+		<img [src]="getProfilePhotoUrl(tweet.username)" alt="Profile Photo" class="profile-photo" onerror="this.src='./assets/icons/default-profile-icon/default-profile.svg'">
+	</div>
+	<div class="tweet-content">
+		<div class="top">
+			<p class="username">
+				{{"@" + tweet.username}}
+			</p>
+			<p class="created">
+				{{tweet.createdAt | timeAgo}}
+			</p>
+		</div>
+		<div class="text-container">
+			<p class="text">
+				{{tweet.content}}
+			</p>
+		</div>
+		<div class="bottom">
+			<div class="responses">
+
+			</div>
+			<div class="likes">
+
+			</div>
+		</div>
+	</div>
+</div>

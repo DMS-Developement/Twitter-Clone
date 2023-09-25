@@ -8,6 +8,10 @@ html {
     font-size: 14px;
 }
 
+.header {
+    min-height: 3em;
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -19,8 +23,8 @@ html {
 }
 
 .pfp-thumbnail {
-    height: 2.5em;
-    width: 2.5em;
+    height: 1.5em;
+    width: 1.5em;
     border-radius: 100%;
     object-fit: cover;
 }

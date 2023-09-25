@@ -25,6 +25,7 @@ public class TweetMapper
             {
                 Id = tweet.Id,
                 Content = tweet.Content,
+                Username = _context.Users.Find(tweet.UserId).Username,
                 UserId = tweet.UserId,
                 CreatedAt = tweet.CreatedAt,
             };

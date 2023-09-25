@@ -13,4 +13,8 @@ export class ImagesService {
     getProfilePhoto(username: string) {
         return this.http.get(`${this.API_BASE_URL}/${username}/profile-photo`, {responseType: 'blob', withCredentials: true});
     }
+
+    getProfilePhotoUrl(username: string) {
+        return `${this.API_BASE_URL}/${username}/profile-photo`;
+    }
 }
