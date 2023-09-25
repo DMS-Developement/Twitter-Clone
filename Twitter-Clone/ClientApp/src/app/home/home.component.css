@@ -21,7 +21,15 @@ app-control-bar {
 .new-tweet {
     z-index: 1;
     position: fixed;
-    bottom: 15%;
-    right: 10%;
+    bottom: 12%;
+    right: 5%;
     width: 4.5em;
+}
+
+.tweets {
+    position: absolute;
+    top: 3.5em;
+    bottom: 5.5em;
+    width: 100%;
+    overflow: scroll;
 }

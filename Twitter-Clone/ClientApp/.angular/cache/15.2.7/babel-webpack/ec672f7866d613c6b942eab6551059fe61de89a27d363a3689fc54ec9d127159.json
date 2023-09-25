@@ -1,0 +1,43 @@
+{
+  "ast": null,
+  "code": "import * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nimport * as i2 from \"../services/currentUser.service\";\nimport * as i3 from \"@angular/common\";\nimport * as i4 from \"../nav-menu/nav-menu.component\";\nimport * as i5 from \"../../control-bar/control-bar.component\";\nimport * as i6 from \"../tweet-display/tweet-display.component\";\nfunction HomeComponent_app_tweet_display_2_Template(rf, ctx) {\n  if (rf & 1) {\n    i0.ɵɵelement(0, \"app-tweet-display\", 3);\n  }\n  if (rf & 2) {\n    const ctx_r0 = i0.ɵɵnextContext();\n    i0.ɵɵproperty(\"tweets\", ctx_r0.tweets);\n  }\n}\nexport class HomeComponent {\n  constructor(http, currentUserService) {\n    this.http = http;\n    this.currentUserService = currentUserService;\n    this.following = false;\n    this.API_BASE_URL = 'https://localhost:7282/api/Tweets';\n  }\n  ngOnInit() {\n    if (this.currentUserService.getItem('currentUser') != null) {\n      this.following = true;\n    }\n    const userId = this.currentUserService.getItem('currentUser').id;\n    this.http.get(`${this.API_BASE_URL}/user/${userId}/following/tweets`, {\n      withCredentials: true\n    }).subscribe(response => {\n      this.tweets = response;\n    });\n  }\n}\nHomeComponent.ɵfac = function HomeComponent_Factory(t) {\n  return new (t || HomeComponent)(i0.ɵɵdirectiveInject(i1.HttpClient), i0.ɵɵdirectiveInject(i2.CurrentUserService));\n};\nHomeComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({\n  type: HomeComponent,\n  selectors: [[\"app-home\"]],\n  decls: 6,\n  vars: 1,\n  consts: [[1, \"home\"], [\"class\", \"tweets\", 3, \"tweets\", 4, \"ngIf\"], [\"alt\", \"new tweet button\", \"src\", \"./assets/icons/Tweet/new-tweet.svg\", 1, \"new-tweet\"], [1, \"tweets\", 3, \"tweets\"]],\n  template: function HomeComponent_Template(rf, ctx) {\n    if (rf & 1) {\n      i0.ɵɵelement(0, \"app-nav-menu\");\n      i0.ɵɵelementStart(1, \"div\", 0);\n      i0.ɵɵtemplate(2, HomeComponent_app_tweet_display_2_Template, 1, 1, \"app-tweet-display\", 1);\n      i0.ɵɵelementStart(3, \"div\");\n      i0.ɵɵelement(4, \"img\", 2);\n      i0.ɵɵelementEnd()();\n      i0.ɵɵelement(5, \"app-control-bar\");\n    }\n    if (rf & 2) {\n      i0.ɵɵadvance(2);\n      i0.ɵɵproperty(\"ngIf\", ctx.following);\n    }\n  },\n  dependencies: [i3.NgIf, i4.NavMenuComponent, i5.ControlBarComponent, i6.TweetDisplayComponent],\n  styles: [\"app-nav-menu[_ngcontent-%COMP%] {\\n    z-index: 1;\\n    position: fixed;\\n    top: 0;\\n    right: 0;\\n    left: 0;\\n}\\n\\napp-control-bar[_ngcontent-%COMP%] {\\n    z-index: 1;\\n    position: fixed;\\n    bottom: 0;\\n    right: 0;\\n    left: 0;\\n}\\n\\n.home[_ngcontent-%COMP%] {\\n    margin-top: 3.5em;\\n}\\n\\n.new-tweet[_ngcontent-%COMP%] {\\n    z-index: 1;\\n    position: fixed;\\n    bottom: 12%;\\n    right: 5%;\\n    width: 4.5em;\\n}\\n\\n.tweets[_ngcontent-%COMP%] {\\n    position: absolute;\\n    top: 3.5em;\\n    bottom: 5em;\\n    width: 100%;\\n    overflow: scroll;\\n}\\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxVQUFVO0lBQ1YsZUFBZTtJQUNmLE1BQU07SUFDTixRQUFRO0lBQ1IsT0FBTztBQUNYOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixTQUFTO0lBQ1QsUUFBUTtJQUNSLE9BQU87QUFDWDs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFVBQVU7SUFDVixlQUFlO0lBQ2YsV0FBVztJQUNYLFNBQVM7SUFDVCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixXQUFXO0lBQ1gsV0FBVztJQUNYLGdCQUFnQjtBQUNwQiIsInNvdXJjZXNDb250ZW50IjpbImFwcC1uYXYtbWVudSB7XG4gICAgei1pbmRleDogMTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAwO1xuICAgIGxlZnQ6IDA7XG59XG5cbmFwcC1jb250cm9sLWJhciB7XG4gICAgei1pbmRleDogMTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgYm90dG9tOiAwO1xuICAgIHJpZ2h0OiAwO1xuICAgIGxlZnQ6IDA7XG59XG5cbi5ob21lIHtcbiAgICBtYXJnaW4tdG9wOiAzLjVlbTtcbn1cblxuLm5ldy10d2VldCB7XG4gICAgei1pbmRleDogMTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgYm90dG9tOiAxMiU7XG4gICAgcmlnaHQ6IDUlO1xuICAgIHdpZHRoOiA0LjVlbTtcbn1cblxuLnR3ZWV0cyB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMy41ZW07XG4gICAgYm90dG9tOiA1ZW07XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgb3ZlcmZsb3c6IHNjcm9sbDtcbn0iXSwic291cmNlUm9vdCI6IiJ9 */\"]\n});",
+  "map": {
+    "version": 3,
+    "mappings": ";;;;;;;;;IAECA,uCAA0F;;;;IAArDA,sCAAiB;;;ACQvD,OAAM,MAAOC,aAAa;EAMtBC,YAAoBC,IAAgB,EAAUC,kBAAsC;IAAhE,SAAI,GAAJD,IAAI;IAAsB,uBAAkB,GAAlBC,kBAAkB;IAHhE,cAAS,GAAY,KAAK;IAClB,iBAAY,GAAG,mCAAmC;EAG1D;EAEAC,QAAQ;IACJ,IAAI,IAAI,CAACD,kBAAkB,CAACE,OAAO,CAAC,aAAa,CAAC,IAAI,IAAI,EAAE;MACxD,IAAI,CAACC,SAAS,GAAG,IAAI;;IAGzB,MAAMC,MAAM,GAAG,IAAI,CAACJ,kBAAkB,CAACE,OAAO,CAAC,aAAa,CAAC,CAACG,EAAE;IAEhE,IAAI,CAACN,IAAI,CAACO,GAAG,CAAU,GAAG,IAAI,CAACC,YAAY,SAASH,MAAM,mBAAmB,EAAE;MAACI,eAAe,EAAE;IAAI,CAAC,CAAC,CAACC,SAAS,CAACC,QAAQ,IAAG;MACzH,IAAI,CAACC,MAAM,GAAGD,QAAQ;IAC1B,CAAC,CAAC;EACN;;AAnBSb,aAAa;mBAAbA,aAAa;AAAA;AAAbA,aAAa;QAAbA,aAAa;EAAAe;EAAAC;EAAAC;EAAAC;EAAAC;IAAA;MDV1BpB,+BAA6B;MAC7BA,8BAAkB;MACjBA,0FAA0F;MAC1FA,2BAAK;MACJA,yBAAuF;MACxFA,iBAAM;MAEPA,kCAAmC;;;MALdA,eAAe;MAAfA,oCAAe",
+    "names": [
+      "i0",
+      "HomeComponent",
+      "constructor",
+      "http",
+      "currentUserService",
+      "ngOnInit",
+      "getItem",
+      "following",
+      "userId",
+      "id",
+      "get",
+      "API_BASE_URL",
+      "withCredentials",
+      "subscribe",
+      "response",
+      "tweets",
+      "selectors",
+      "decls",
+      "vars",
+      "consts",
+      "template"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/home/home.component.html",
+      "/Users/davidshimenko/RiderProjects/Twitter Clone/Twitter-Clone/Twitter-Clone/ClientApp/src/app/home/home.component.ts"
+    ],
+    "sourcesContent": [
+      "<app-nav-menu></app-nav-menu>\n<div class=\"home\">\n\t<app-tweet-display *ngIf=\"following\" [tweets]=\"tweets\" class=\"tweets\"></app-tweet-display>\n\t<div>\n\t\t<img alt=\"new tweet button\" class=\"new-tweet\" src=\"./assets/icons/Tweet/new-tweet.svg\">\n\t</div>\n</div>\n<app-control-bar></app-control-bar>",
+      "import {Component, OnInit} from '@angular/core';\nimport {Tweet} from \"../Interfaces/Tweet\";\nimport {HttpClient} from \"@angular/common/http\";\nimport {CurrentUserService} from \"../services/currentUser.service\";\n\n@Component({\n    selector: 'app-home',\n    templateUrl: './home.component.html',\n    styleUrls: ['./home.component.css']\n})\nexport class HomeComponent implements OnInit {\n\n    tweets: Tweet[] | undefined;\n    following: boolean = false;\n    private API_BASE_URL = 'https://localhost:7282/api/Tweets';\n\n    constructor(private http: HttpClient, private currentUserService: CurrentUserService) {\n    }\n\n    ngOnInit() {\n        if (this.currentUserService.getItem('currentUser') != null) {\n            this.following = true;\n        }\n\n        const userId = this.currentUserService.getItem('currentUser').id;\n\n        this.http.get<Tweet[]>(`${this.API_BASE_URL}/user/${userId}/following/tweets`, {withCredentials: true}).subscribe(response => {\n            this.tweets = response;\n        });\n    }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

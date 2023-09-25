@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,800;1,900&display=swap');
+
 .tweet-display {
     display: flex;
     border: 1px solid #E5E6E9;
@@ -14,6 +16,7 @@
 }
 
 .tweet-content {
+    position: relative;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -21,13 +24,43 @@
     align-items: flex-start;
     min-height: 8em;
     margin-left: 1em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .top {
     display: flex;
     width: 100%;
+    height: fit-content;
+}
+
+.username {
+    font-weight: 800;
+    margin: 0;
 }
 
 .created {
     margin-left: .5em;
+    margin-bottom: 0;
+    color: #8C9399;
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 10%;
+}
+
+.comment, .like {
+    width: 1em;
+    color: #8C9399;
+}
+
+.like {
+    margin-right: 2em;
 }
