@@ -3,7 +3,7 @@ MiniTweet: A simplified Twitter clone built to demonstrate a full-stack applicat
 
 Introduction
 
-This portfolio project serves as a simplified Twitter clone designed to showcase skills in full-stack web development. Built using Angular, C#/.NET, and Postgres, the application emulates key functionalities of Twitter but in a stripped-down, easy-to-understand manner. While it may lack the complexity of the real Twitter, it serves as a comprehensive demonstration of end-to-end software development capabilities.
+This portfolio project serves as a simplified Twitter clone designed to showcase skills in full-stack web development. Built using Angular, C#/.NET, and Postgres, the application emulates key functionalities of Twitter but in a stripped-down, easy-to-understand manner, it serves as a comprehensive demonstration of end-to-end software development capabilities.
 
 Objectives
 
