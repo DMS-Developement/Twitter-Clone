@@ -1,9 +1,9 @@
-# Mini Tweet
+# Mini Tweet 🐦
 ## Mini Tweet: A simplified Twitter clone built to demonstrate a full-stack application using C#/.NET, Angular, and PostgreSQL. Features user authentication, tweet posting, and more.
 
 **Introduction**
 
-This portfolio project serves as a simplified Twitter clone designed to showcase skills in full-stack web development. Built using Angular, C#/.NET, and Supabase, the application emulates key functionalities of Twitter but in a stripped-down, easy-to-understand manner.
+This portfolio project serves as a simplified Twitter clone designed to showcase skills in full-stack web development. Built using Angular, C#/.NET, and Supabase, the application emulates key functionalities of Twitter but in a stripped-down manner.
 
 **Objectives:**
 
